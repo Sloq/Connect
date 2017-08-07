@@ -87,14 +87,15 @@ The primary technical challenges will be:
 ### Phase 1: Backend Auth and Front End Setup(2 days)
 
 **Objective:**
-
-  -  Set up state, tags, create Sample state(Leo)
-  -  A completed backend for User Auth using Node.js (Leo)
+  - Implement auth using node.js with MongoDB as the Database (Leo)
+  - Setup Middleware (Leo)
   - A completed series of frontend pages completed without functionality(Tianyu and Stephen)
 
 ### Phase 2:  (1 day)
 
 **Objective:**
+  - Set up state, tags, create Sample state(Leo)
+  - Set up seeds(Leo)
   - Set up functionality for login page(Tianyu)
   - Set up functionality for contacts page(Stephen)
 
