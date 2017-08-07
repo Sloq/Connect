@@ -1,7 +1,6 @@
 # Connect
-[Heroku link][heroku]
 
-[heroku]:
+[Heroku Link]
 
 ## Minimum Viable Product/ Functionality
 
@@ -17,7 +16,7 @@ By the start of Week 11, this app will, at a minimum, satisfy the following crit
 - [ ] Users able to Scan each other's QR codes
 - [ ] Use Google Maps API to display the time and location of networking
 - [ ] Be able to search for specific contacts
-- [ ] Be able categorize your contacts for organization
+- [ ] Use categories to organize your contacts
 - [ ] Production README
 
 ### Auxiliary Functionality
@@ -29,7 +28,7 @@ By the start of Week 11, this app will, at a minimum, satisfy the following crit
 
 ## Design Docs
 * [View Wireframes][wireframes]
-* [React Components][components]
+* [Component hierarchy][components]
 * [API endpoints][api-endpoints]
 * [DB schema][schema]
 * [Sample State][sample-state]
@@ -45,12 +44,20 @@ By the start of Week 11, this app will, at a minimum, satisfy the following crit
 Our group consists of three members, Tianyu Duan, Leo Liao and Stephen Loquet
 
 Tianyu's primary responsibilities will be:
-  - Figuring out the logistics of using a phone QR scanner and sending it to the DB
-  - Create and Style the mobile App
-  - Create the landing, Login, Home, and Camera page
+  - Figure out the logistics of using a phone QR scanner and sending it to the DB
+  - Frontend development of the mobile App
+  - Create the Landing, Login, Home, Camera, and Geolocation page
+  - Learn React-Native
+
 Leo's primary responsibilities will be:
+  - Manage the backend development for the mobile app
+  - Learn Node.Js and MongoDB
 
 Stephen's primary responsibilities will be:
+  - Learn React-Native
+  - Frontend development of the mobile App
+  - Create the Contacts, User Profile and Geolocation page
+
 
 ## Technologies
 
@@ -58,47 +65,51 @@ The mobile app, Connect, will be implemented with: JavaScript, HTML, CSS, React-
 
 The primary technical challenges will be:
 
-  -Generating User specific QR codes upon account creation
+  - Generating User specific QR codes upon account creation
 
-  -Scanning an displaying new contact information on own contact log
+  - Scanning and displaying new contact information on own contact log
 
-  -Utilizing all new frameworks and technologies will be our biggest challenge
+  - Utilizing all new frameworks and technologies
 
 ## Things accomplished over the weekend
 
- Attempted to learn new technologies, decided and allocated work to each individual. D
+ - Attempted to learn new technologies, went through tutorials
+
+ - Decided and allocated what type of work to each individual
+
+ - Set up a basic landing page and login page with React-Native
+
+ - Team created proposal and started the skeleton of the project
 
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+### Phase 1: Backend Auth and Front End Setup(2 days)
 
-**Objective:** Functioning rails project with front-end Authentication
+**Objective:**
 
-### Phase 2: Photo Model, API, and components (1 day)
+  -  Set up state, tags, create Sample state(Leo)
+  -  A completed backend for User Auth using Node.js (Leo)
+  - A completed series of frontend pages completed without functionality(Tianyu and Stephen)
 
-**Objective:** Photos can be uploaded, viewed, edited and destroyed through
-the API.
+### Phase 2:  (1 day)
 
-### Phase 3: Home Page Setup (1 day)
+**Objective:**
+  - Set up functionality for login page(Tianyu)
+  - Set up functionality for contacts page(Stephen)
 
-**Objective:** Seed Photos to be viewed at Home Screen.
+### Phase 3:  (2 days)
 
-### Phase 4: Image Upload (1 day)
+**Objective:**
+  -  Set up Heroku, have a database to store all the user info (Stephen)
+  -  Add functionality to Login, Camera, Home page(Tianyu)
+  -  Add functionality to Contacts Screen, User Profile(Stephen)
 
-**Objective:** Uploads images with tags, title and description.
-
-### Phase 5: Content Page (1 day)
-
-**Objective:** Content Page displays all photos from users.
-
-### Phase 6: Content Page Setup/with Tags (1 day)
-
-**Objective:**  Objective: Content Page displays all photos, able to filter through pictures with tags.
-
-### Phase 7: Comments/Likes (1 day)
-
-**Objective:** User can comment on other User's Photos. User can Like an image. Each image will have an Like Counter.
+### Phase 4:  (2 days)
+  -  Have a functional website to explain application (Leo)
+  -  Set up emulator( Leo )
+  - Work on Geolocation Google API (Stephen, Tianyu)
+  - Polish frontend with smooth, bug-free navigation and sufficient CSS styling
 
 
 ### Bonus Features (TBD)
