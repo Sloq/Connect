@@ -73,7 +73,7 @@ The primary technical challenges will be:
 
 ## Things accomplished over the weekend
 
- - Attempted to learn new technologies, went through tutorials
+ - Attempted to learn new technologies, went through tutorialsx
 
  - Decided and allocated what type of work to each individual
 
