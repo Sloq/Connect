@@ -1,11 +1,19 @@
 import React, {Component} from 'react';
+import {reduxForm} from 'redux-form';
 import {AppRegistry, Text, View, StyleSheet, KeyboardAvoidingView,
   TextInput, TouchableOpacity, StatusBar} from 'react-native';
 
 
 export default class Loginform extends Component{
+  signIn() {
+    let {email, password} = this.props.fields;
+    console.log(email.value, password.value);
+  } // end signIn
 
   render(){
+
+    let {fields: {email, password}} = this.props;
+
     return (
       <View
       style={styles.container}
@@ -15,6 +23,7 @@ export default class Loginform extends Component{
       />
 
       <TextInput
+        {...email}
       placeholder="username or email"
       placeholderTextColor='rgba(255, 255, 255, 0.7)'
       returnKeyType='next'
@@ -26,6 +35,7 @@ export default class Loginform extends Component{
       />
 
       <TextInput
+        {...password}
       placeholder = "password"
       placeholderTextColor='rgba(255, 255, 255, 0.7)'
       secureTextEntry
@@ -36,8 +46,13 @@ export default class Loginform extends Component{
 
 
       <TouchableOpacity style={styles.buttonContainer}>
-      <Text style={styles.buttonText}>LOGIN</Text>
+      <Text style={styles.buttonText} onPress={this.signIn}>LOGIN</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity style={styles.buttonContainer}>
+      <Text style={styles.buttonText}>SIGNUP</Text>
+      </TouchableOpacity>
+
 
       </View>
     );
@@ -74,5 +89,14 @@ const styles = StyleSheet.create({
   }
 });
 
+const validate = (formProps) => {
+  let errors = {};
+  return errors;
+};
 
-AppRegistry.registerComponent('Loginform', () => Loginform);
+AppRegistry.registerComponent('Loginform', () => reduxForm({
+  form: 'login',
+  fields: ['email', 'password'],
+  validate: validate
+}, null, null)(Loginform));
+// module.exports = reduxForm()(Loginform);
