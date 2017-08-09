@@ -10,7 +10,9 @@ import Tabs from './components/index';
 export default class App extends React.Component {
   render() {
     return (
+      <View style={{flex: 1}}>
       <Tabs/>
+      </View>
     );
   }
 }
