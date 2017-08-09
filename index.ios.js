@@ -6,7 +6,7 @@ import {
   Text,
   View
 } from 'react-native';
-import Index from './app/index';
+import Index from './components/index';
 
 export default class connect extends Component {
   render() {
