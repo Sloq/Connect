@@ -1,15 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar, Dimensions} from 'react-native';
-import { BarCodeScanner, Permissions, Orientation } from 'expo';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { BarCodeScanner, Permissions } from 'expo';
 
 export default class QRScanner extends React.Component {
   state = {
     hasCameraPermission: null,
   }
-
-  static navigationOptions = {
-    tabBarLabel: 'QRCamera',
-  };
 
   async componentWillMount() {
     const { status } = await Permissions.askAsync(Permissions.CAMERA);
@@ -17,9 +13,6 @@ export default class QRScanner extends React.Component {
   }
 
   render() {
-
-     const { navigate } = this.props.navigation;
-
     const { hasCameraPermission } = this.state;
     if (hasCameraPermission === null) {
       return <View />;
@@ -27,19 +20,16 @@ export default class QRScanner extends React.Component {
       return <Text>No access to camera</Text>;
     } else {
       return (
-        <View style={styles.container}>
-          <Button
-        title="Go to Setup Tab"
-        onPress={() => navigate('Setup')}
-      />
+        <View style={{flex: 1}}>
+
           <StatusBar
-          barStyle='light-content'
-          />
+     barStyle='light-content'
+     />
           <BarCodeScanner
-              onBarCodeRead={this._handleBarCodeRead}
-              style={StyleSheet.absoluteFill}
-            />
-          <View style={styles.preview}></View>
+            onBarCodeRead={this._handleBarCodeRead}
+            style={StyleSheet.absoluteFill}
+          />
+              <View style={styles.preview}></View>
         </View>
       );
     }
@@ -79,6 +69,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       marginTop: '10%',
       marginBottom: '10%',
+      marginLeft: '7%',
       justifyContent: 'center',
       backgroundColor: 'rgba(0,0,0, .1)'
     },
