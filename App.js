@@ -2,10 +2,10 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 
-import Splash from './components/splash.js';
+import Splash from './app/components/splash.js';
 // import QRCamera from './components/screens/camera.js';
 // import Home from './components/homescreen/home';
-import Tabs from './components/index';
+import Tabs from './app/components/index';
 
 export default class App extends React.Component {
   render() {
