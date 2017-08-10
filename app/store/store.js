@@ -1,11 +1,16 @@
-import {createStore} from 'redux';
 import rootReducer from '../reducer/root';
+import thunk from 'redux-thunk'; // for async action
+import {createStore, compose, applyMiddleware} from 'redux';
+import {AsyncStorage} from 'react-native';
+import {persistStore, autoRehydrate} from 'redux-persist';
 
-var defaultState = {
-  email: "",
-  password: ""
-};
+const defaultState = {};
 
-export var configureStore = (state={}) => {
-  return createStore(rootReducer, state);
+export const configureStore = (state=defaultState) => {
+  const store = createStore(rootReducer, state, compose(
+    applyMiddleware(thunk),
+    autoRehydrate()
+  ));
+  persistStore(store, {storage: AsyncStorage});
+  return store;
 };

@@ -6,5 +6,5 @@ import authReducer from './authReducer';
 
 module.exports = combineReducers({
   form: formReducer,
-  auth: authReducer
+  auth: authReducer,
 });

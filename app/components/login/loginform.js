@@ -2,30 +2,35 @@ import React, {Component} from 'react';
 import {reduxForm} from 'redux-form';
 import {AppRegistry, Text, View, StyleSheet, KeyboardAvoidingView,
   TextInput, TouchableOpacity, StatusBar} from 'react-native';
-import { userSignIn } from '../../actions/auth_actions';
+import { userLogIn, userSignUp } from '../../actions/actions';
 
 class LogInForm extends Component {
   constructor(props){
     super(props);
   this.onLogIn = this.onLogIn.bind(this);
-  this.renderError = this.renderError.bind(this);
+  // this.renderError = this.renderError.bind(this);
   }
 
   onLogIn() {
-    const {email, password} = this.props.fields;
-    this.props.dispatch(userSignIn('fake id'));
+    const { dispatch, fields: {email, password} } = this.props;
+    this.props.dispatch(userLogIn(email.value, password.value));
     // console.log("email: " + email.value, "password: " + password.value);
-  } // end signIn
+  } // end onLogIn
 
-  renderError(field){
-    if (field.touched && field.error) {
-      return ( <Text>{field.error}</Text> ); // end return
-    } // end if
-  }// end renderError
+  onSignUp() {
+    const { dispatch, fields: {email, password} } = this.props;
+    this.props.dispatch(userSignUp(email.value, password.value));
+    // console.log("email: " + email.value, "password: " + password.value);
+  } // end onSignUp
 
   render(){
     var {fields: {email, password}} = this.props;
-    console.log(this.props);
+
+    const renderError = (field) => {
+      if (field.touched && field.error) {
+        return ( <Text>{field.error}</Text> ); // end return
+      } // end if
+    };// end renderError
 
 
     const styles = StyleSheet.create({
@@ -58,8 +63,6 @@ class LogInForm extends Component {
       }
     });
 
-
-
     return (
       <View style={styles.container} >
       <StatusBar barStyle='light-content' />
@@ -74,7 +77,7 @@ class LogInForm extends Component {
       autoCorrect={false}
       style={styles.input} />
       <View>
-      {this.renderError(email)}
+      {renderError(email)}
       </View>
 
       <TextInput
@@ -86,15 +89,15 @@ class LogInForm extends Component {
       style={styles.input} />
 
       <View>
-      {this.renderError(password)}
+      {renderError(password)}
       </View>
 
-      <TouchableOpacity style={styles.buttonContainer}>
-      <Text style={styles.buttonText} onPress={this.onLogIn}>LOGIN</Text>
+      <TouchableOpacity style={styles.buttonContainer} onPress={this.onLogIn}>
+      <Text style={styles.buttonText} >LOGIN</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.buttonContainer}>
-      <Text style={styles.buttonText}>SIGNUP</Text>
+      <TouchableOpacity style={styles.buttonContainer} onPress={this.onSignUp}>
+      <Text style={styles.buttonText} >SIGNUP</Text>
       </TouchableOpacity>
 
       </View>

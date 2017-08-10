@@ -14,6 +14,7 @@ import LogIn from './login/login.js';
 export default class SplashScreen extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       showComponentSplash: true,
     };
@@ -28,7 +29,7 @@ export default class SplashScreen extends Component {
 
   render() {
     let login = () => (
-      <LogIn/>
+      <LogIn />
     );
 
     let show = () => (

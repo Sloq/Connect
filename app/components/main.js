@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Tabs } from './config/router';
+import { connect } from 'react-redux';
 import {
   StyleSheet,
   Text,
@@ -8,28 +9,70 @@ import {
 } from 'react-native';
 import {userSignOut} from '../actions/auth_actions';
 
-class Main extends Component {
-  render(){
-  const onLogout = () => {
+var Main = React.createClass({
+  onLogout: function() {
     this.props.dispatch(userSignOut);
-  };
-
+  },
+  render(){
     return (
       <View>
-        <TouchableOpacity onPress={this.onLogout}>
-          <Text>
-            Logout
-          </Text>
+        <TouchableOpacity style={styles.buttonContainer}>
+        <Text style={styles.buttonText} onPress={this.onLogout}>LOGOUT</Text>
         </TouchableOpacity>
-
-        <Tabs/>
       </View>
-    ); //end return
-  } // end render
-} // end class Main
+      ); //end return
+    } // end render
+  }); // end class Main
 
-const styles = StyleSheet.create({
+  const styles = StyleSheet.create({
+    buttonContainer: {
+      justifyContent: 'center',
+      backgroundColor: '#2980b9',
+      paddingVertical: 15,
+      alignItems: 'center',
+      top: '100%'
+    },
+    buttonText: {
+      textAlign: 'center',
+      color: "#FFF",
+    }
+  });
 
-});
+  module.exports = connect()(Main);
 
-export default Main;
+// class Main extends Component {
+//   render(){
+//
+//   const onLogout = () => {
+//     console.log(this.props);
+//     this.props.dispatch(userSignOut);
+//   };
+//
+//     return (
+//       <View>
+//
+//         <TouchableOpacity style={styles.buttonContainer}>
+//         <Text style={styles.buttonText} onPress={this.onLogout}>LOGOUT</Text>
+//         </TouchableOpacity>
+//
+//       </View>
+//     ); //end return
+//   } // end render
+// } // end class Main
+//
+// const styles = StyleSheet.create({
+//   buttonContainer: {
+//     justifyContent: 'center',
+//     backgroundColor: '#2980b9',
+//     paddingVertical: 15,
+//     alignItems: 'center',
+//     top: '100%'
+//
+//   },
+//   buttonText: {
+//     textAlign: 'center',
+//     color: "#FFF",
+//   }
+// });
+//
+// module.exports = connect()(Main);
