@@ -8,19 +8,19 @@ class LogInForm extends Component {
   constructor(props){
     super(props);
   this.onLogIn = this.onLogIn.bind(this);
-  // this.renderError = this.renderError.bind(this);
+  this.onSignUp = this.onSignUp.bind(this);
   }
 
   onLogIn() {
     const { dispatch, fields: {email, password} } = this.props;
     this.props.dispatch(userLogIn(email.value, password.value));
-    // console.log("email: " + email.value, "password: " + password.value);
+    console.log("email: " + email.value, "password: " + password.value);
   } // end onLogIn
 
   onSignUp() {
     const { dispatch, fields: {email, password} } = this.props;
     this.props.dispatch(userSignUp(email.value, password.value));
-    // console.log("email: " + email.value, "password: " + password.value);
+    console.log("email: " + email.value, "password: " + password.value);
   } // end onSignUp
 
   render(){
