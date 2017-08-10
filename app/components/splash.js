@@ -9,7 +9,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import Login from './login/login.js';
+import LogIn from './login/login.js';
 
 export default class SplashScreen extends Component {
   constructor(props) {
@@ -28,11 +28,11 @@ export default class SplashScreen extends Component {
 
   render() {
     let login = () => (
-      <Login/>
+      <LogIn/>
     );
 
     let show = () => (
-      this.state.showComponentSplash ? splash() : <Login/>
+      this.state.showComponentSplash ? splash() : <LogIn/>
     );
 
     let splash = () => (
@@ -47,7 +47,7 @@ export default class SplashScreen extends Component {
             style={styles.buttonContainer}
             onPress={this.handleClick}>
               {
-                this.state.showComponentSplash ? null : <Login/>
+                this.state.showComponentSplash ? null : <LogIn/>
               }
           <Text style={styles.buttonText}>LOGIN</Text>
           </TouchableOpacity>

@@ -9,10 +9,10 @@ import {
 
 // import {} from '../actions';
 
+
 import Loginform from './loginform';
 import Main from '../main';
 // import AlertContainer from './alerts/AlertContainer';
-// <AlertContainer/>
 
 var App = React.createClass({
   getInitialState() {
@@ -57,7 +57,6 @@ var mapStateToProps = (state) => {
 };
 
 module.exports = connect(mapStateToProps)(App);
-
 
 // import React, {Component} from 'react';
 // import {connect} from 'react-redux';

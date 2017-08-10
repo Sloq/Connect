@@ -12,7 +12,7 @@ module.exports = (state=defaultState, action) => {
       return {
         user_id: undefined
       };
-      
+
     default:
       return state;
   }

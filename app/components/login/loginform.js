@@ -21,12 +21,12 @@ class LogInForm extends Component {
     if (field.touched && field.error) {
       return ( <Text>{field.error}</Text> ); // end return
     } // end if
-  }
+  }// end renderError
 
   render(){
     var {fields: {email, password}} = this.props;
+    console.log(this.props);
 
-   // end renderError
 
     const styles = StyleSheet.create({
       container: {

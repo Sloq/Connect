@@ -14,7 +14,7 @@ class Main extends Component {
         Welcome to Main!
         </Text>
       </View>
-    ); //end return 
+    ); //end return
   } // end render
 } // end class Main
 
@@ -23,3 +23,14 @@ const styles = StyleSheet.create({
 });
 
 export default Main;
+
+// import React, { Component } from 'react';
+// import { Tabs } from './config/router';
+//
+// class App extends Component {
+//   render() {
+//     return <Tabs/>;
+//   }
+// }
+//
+// export default App;
