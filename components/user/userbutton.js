@@ -11,7 +11,9 @@ import {
 
 const Button = () => {
   return (
-    <TouchableOpacity onPress={()=> console.log('hello')} style={Styles.ButtonStyle}>
+    <TouchableOpacity
+     onPress={()=> console.log('hello')}
+     style={Styles.ButtonStyle}>
     <Text style={Styles.TextStyle}>Click Me!</Text>
     </TouchableOpacity>
   );

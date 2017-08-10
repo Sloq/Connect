@@ -1,36 +1,33 @@
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { Header } from './components/common';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import reducers from './components/reducers';
 
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-import Index from './app/index';
 
-export default class connect extends Component {
+import Splash from './components/splash.js';
+// import QRCamera from './components/screens/camera.js';
+// import Home from './components/homescreen/home';
+import Tabs from './components/index';
+
+export default class App extends React.Component {
   render() {
-    return <Index/>;
+    return (
+        <Provider store={createStore(reducers)}>
+      <View style={{flex: 1}}>
+        <Header headerText="Tech Stack" />
+      </View>
+        </Provider>
+    );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#fff',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+    justifyContent: 'center',
   },
 });
-
-AppRegistry.registerComponent('connect', () => connect);
