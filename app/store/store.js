@@ -1,4 +1,4 @@
-import rootReducer from '../reducer/root';
+import rootReducer from '../reducer';
 import thunk from 'redux-thunk'; // for async action
 import {createStore, compose, applyMiddleware} from 'redux';
 import {AsyncStorage} from 'react-native';

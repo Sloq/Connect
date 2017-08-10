@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {reduxForm} from 'redux-form';
 import {AppRegistry, Text, View, StyleSheet, KeyboardAvoidingView,
   TextInput, TouchableOpacity, StatusBar} from 'react-native';
-import { userLogIn, userSignUp } from '../../actions/actions';
+import { userLogIn, userSignUp } from '../../actions';
 
 class LogInForm extends Component {
   constructor(props){

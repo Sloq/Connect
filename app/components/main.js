@@ -7,7 +7,7 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
-import {userSignOut} from '../actions/auth_actions';
+import {userSignOut} from '../actions';
 
 var Main = React.createClass({
   onLogout: function() {

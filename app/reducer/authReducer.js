@@ -1,8 +1,7 @@
 const defaultState = {
   user_id: undefined,
 };
-
-module.exports = (state=defaultState, action) => {
+const AuthReducer = (state=defaultState, action) => {
   switch(action.type){
     case 'SIGN_IN':
       return {
@@ -17,3 +16,5 @@ module.exports = (state=defaultState, action) => {
       return state;
   }
 };
+
+export default AuthReducer;
