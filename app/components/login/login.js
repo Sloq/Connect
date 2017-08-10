@@ -1,30 +1,43 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {AppRegistry, Text, View, StyleSheet, Image,
   KeyboardAvoidingView} from 'react-native';
-import Loginform from './loginform.js';
+import Loginform from './loginform';
+import Main from '../main';
 
-export default class Login extends Component{
+class Login extends Component{
   constructor(props) {
     super(props);
+
     this.state = {
-      showComponentLogin: false,
+      auth: ""
     };
+    // this.state = {
+    //   showComponentLogin: false,
+    // };
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentWillMount(){
+    this.setState({auth: this.state.auth });
   }
 
   handleClick() {
     this.setState({
           showComponentLogin: true,
         });
-
   }
 
   render(){
 
-    const toggle = () => (
-      <View></View>
+    const toggle = () => {
+      if (this.props.user_id){
+        return  <Main /> ;
+      } else {
+         return <Loginform/>;
+      }
+    };
 
-    );
     return (
       <KeyboardAvoidingView
       behavior='padding'
@@ -40,8 +53,10 @@ export default class Login extends Component{
       </View>
 
       <View style={styles.formContainer}>
+        <Text>Hello Toggle</Text>
         <Loginform/>
       </View>
+
 
       </KeyboardAvoidingView>
     );
@@ -74,8 +89,15 @@ const styles = StyleSheet.create({
     width: 160,
     opacity: .9,
   }
-
-
 });
 
-AppRegistry.registerComponent('Login', () => Login);
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    user_id: state.auth.user_id
+  };
+};
+
+export default connect(mapStateToProps)(Login);
+
+// AppRegistry.registerComponent('Login', () => Login);

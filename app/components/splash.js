@@ -24,7 +24,6 @@ export default class SplashScreen extends Component {
     this.setState({
           showComponentSplash: false,
         });
-
   }
 
   render() {
@@ -46,16 +45,13 @@ export default class SplashScreen extends Component {
         <View style={styles.loginWrapper}>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={this.handleClick}
-            >
+            onPress={this.handleClick}>
               {
                 this.state.showComponentSplash ? null : <Login/>
               }
-          <Text style={styles.buttonText}
-            >LOGIN</Text>
+          <Text style={styles.buttonText}>LOGIN</Text>
           </TouchableOpacity>
         </View>
-
 
         <Text style={styles.subtitle}>
         Powered by React native

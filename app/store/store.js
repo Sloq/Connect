@@ -1,11 +1,11 @@
 import {createStore} from 'redux';
-import reducer from '../reducer/root.js';
+import rootReducer from '../reducer/root';
 
 var defaultState = {
   email: "",
   password: ""
 };
 
-export var configureStore = (state=defaultState) => {
-  return createStore(reducer, state);
+export var configureStore = (state={}) => {
+  return createStore(rootReducer, state);
 };
