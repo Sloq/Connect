@@ -7,9 +7,11 @@ import { userLogIn, userSignUp, addAlert } from '../../actions';
 class LogInForm extends Component {
   constructor(props){
     super(props);
+
     this.state = {
       loading: false
     };
+
   this.onLogIn = this.onLogIn.bind(this);
   this.onSignUp = this.onSignUp.bind(this);
   }
