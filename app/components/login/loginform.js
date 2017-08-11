@@ -23,7 +23,6 @@ class LogInForm extends Component {
     // this.setState({
     //   loading: false
     // });
-    console.log("onLogIn");
   } // end onLogIn
 
   onSignUp() {
