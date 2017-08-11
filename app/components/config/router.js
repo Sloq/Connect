@@ -7,6 +7,7 @@ import UserProfile from '../screens/user_profile';
 import MapPage from '../screens/map';
 import QRScanner from '../screens/camera';
 import ContactDetail from '../screens/contact_detail';
+import LibraryList from '../contacts/LibraryList.js';
 
 //will need to utilize StackNavigator with contact list so viewing a certain contacts info and going back brings you back to the contact list
 export const ContactStack = StackNavigator({
@@ -37,9 +38,9 @@ export const Tabs = TabNavigator({
       }
     },
     Contacts: {
-      screen: ContactStack,
+      screen: LibraryList,
       navigationOptions: {
-          tabBarlabel: 'ContactList',
+          tabBarlabel: 'LibraryList',
           tabBarIcon: ({ tintColor }) => <Icon name='people' size={30} color={tintColor}/>
       }
     },

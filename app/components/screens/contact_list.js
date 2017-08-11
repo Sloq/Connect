@@ -23,26 +23,14 @@ class ContactList extends Component {
   //     onChangeText={()=>{}}
   // />
 
+  //Render
   render() {
-    if (connections) {
     return (
-      <ScrollView>
-        <List>
-          {connections.map((connection) => (
-            <ListItem
-              key={connection.login.username}
-              roundAvatar
-              avatar={{ uri: connection.picture }}
-              title={connection.name}
-              subtitle={connection.email}
-              onPress={() => this.onTap(connection)}
-            />
-          ))}
-        </List>
-      </ScrollView>
-    );} else {
-      return (<Text>No Friends Yet</Text>);
-    }
+      <View style={{flex: 1}}>
+        <Header headerText="Contacts" />
+        <LibraryList/>
+      </View>
+    );
   }
 }
 
