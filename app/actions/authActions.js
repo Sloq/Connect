@@ -13,10 +13,10 @@ export const userLogIn = (email, password) => (dispatch) => {
     axios.post(SIGNIN_URL, {email, password})
          .then((response) => {
            const {user_id, token} = response.data;
-          //  Keychain.setGenericPassword(user_id, token)
-                  //  .then(function() {
+           Keychain.setGenericPassword(user_id, token, console.log("inside keychain"))
+                   .then(function() {
                     dispatch(userSignIn(user_id));
-                    // });
+                    });
          }).catch((error) => {
            dispatch(addAlert("user does not exists"));
          })
