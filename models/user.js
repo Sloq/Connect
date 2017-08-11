@@ -19,7 +19,20 @@ var userSchema = new Schema({
   },
   password: {
     type: String
-  }
+  },
+  name: String,
+  connectionsToMe: [String],
+  connectionsToOthers: [String],
+  photo:     String,
+  phone:     String,
+  address:   String,
+  birthday:  String,
+  linkedin:  String,
+  snapchat:  String,
+  facebook:  String,
+  instagram: String,
+  twitter:   String,
+  github:    String
 }); // end userSchema
 
 // this function will be executed before user is saved
@@ -33,9 +46,9 @@ userSchema.pre('save', function(next){
       if(err){
         return next(err);
       }
-      bcrypt.hash(user.password, salt, null, function(err, hash) {
-        if(err){
-          return next(err);
+      bcrypt.hash(user.password, salt, null, function(error, hash) {
+        if(error){
+          return next(error);
         }
         user.password = hash;
         next();
