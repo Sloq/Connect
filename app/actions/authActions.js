@@ -1,5 +1,7 @@
 import {SIGNIN_URL, SIGNUP_URL} from '../util/auth_util';
 import axios from 'axios';
+import Keychain from 'react-native-keychain';
+import {addAlert} from './alertActions';
 
 export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT = 'SIGN_OUT';
@@ -12,7 +14,7 @@ export const userLogIn = (email, password) => (dispatch) => {
            const {user_id, token} = response.data;
            dispatch(userSignIn(user_id));
          }).catch((error) => {
-           console.log("user does not exists");
+           dispatch(addAlert("user does not exists"));
          })
   );
 };
@@ -24,22 +26,10 @@ export const userSignUp = (email, password) => (dispatch) => {
            const {user_id, token} = response.data;
            dispatch(userSignIn(user_id));
          }).catch((error) => {
-           console.log("error");
+           dispatch(addAlert("User already exisits"));
          })
   );
 };
-// export const userSignUp = (email, password) => {
-//   return function(dispatch) {
-//     return axios.post(SIGNUP_URL, {email, password})
-//                 .then((response) => {
-//                   var {user_id, token} = response.data;
-//                   console.log(response.data);
-//                   dispatch(userSignIn(user_id));
-//                 }).catch((error) => {
-//                   console.log("error");
-//                 });
-//   };
-// };
 
 // action creator
 export const userSignIn = (user_id) => {

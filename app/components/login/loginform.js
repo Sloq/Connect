@@ -2,36 +2,51 @@ import React, {Component} from 'react';
 import {reduxForm} from 'redux-form';
 import {AppRegistry, Text, View, StyleSheet, KeyboardAvoidingView,
   TextInput, TouchableOpacity, StatusBar} from 'react-native';
-import { userLogIn, userSignUp } from '../../actions';
+import { userLogIn, userSignUp, addAlert } from '../../actions';
 
 class LogInForm extends Component {
   constructor(props){
     super(props);
+    // this.state = {
+    //   loading: false
+    // };
   this.onLogIn = this.onLogIn.bind(this);
   this.onSignUp = this.onSignUp.bind(this);
   }
 
   onLogIn() {
     const { dispatch, fields: {email, password} } = this.props;
+    // this.setState({
+    //   loading: true
+    // });
     this.props.dispatch(userLogIn(email.value, password.value));
-    console.log("email: " + email.value, "password: " + password.value);
+    // this.setState({
+    //   loading: false
+    // });
+    console.log("onLogIn");
   } // end onLogIn
 
   onSignUp() {
     const { dispatch, fields: {email, password} } = this.props;
+    // this.setState({
+    //   loading: true
+    // });
     this.props.dispatch(userSignUp(email.value, password.value));
-    console.log("email: " + email.value, "password: " + password.value);
+    // this.setState({
+    //   loading: false
+    // });
   } // end onSignUp
 
   render(){
-    var {fields: {email, password}} = this.props;
+    const {fields: {email, password}} = this.props;
 
     const renderError = (field) => {
       if (field.touched && field.error) {
-        return ( <Text>{field.error}</Text> ); // end return
+        return (
+          <Text style={styles.formError}>{field.error}</Text>
+          ); // end return
       } // end if
     };// end renderError
-
 
     const styles = StyleSheet.create({
       container: {
@@ -63,46 +78,56 @@ class LogInForm extends Component {
       }
     });
 
-    return (
-      <View style={styles.container} >
-      <StatusBar barStyle='light-content' />
+    // if (this.state.loading) {
+    //   return (
+    //     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    //       <Text>
+    //         Loading...
+    //       </Text>
+    //     </View>
+    //   );
+    // } else {
+      return (
+        <View style={styles.container} >
+        <StatusBar barStyle='light-content' />
 
-      <TextInput
-        {...email}
-      placeholder="username or email"
-      placeholderTextColor='rgba(255, 255, 255, 0.7)'
-      returnKeyType='next'
-      keyboardType='email-address'
-      autoCapitalize='none'
-      autoCorrect={false}
-      style={styles.input} />
-      <View>
-      {renderError(email)}
-      </View>
+        <TextInput
+          {...email}
+        placeholder="username or email"
+        placeholderTextColor='rgba(255, 255, 255, 0.7)'
+        returnKeyType='next'
+        keyboardType='email-address'
+        autoCapitalize='none'
+        autoCorrect={false}
+        style={styles.input} />
+        <View>
+        {renderError(email)}
+        </View>
 
-      <TextInput
-        {...password}
-      placeholder = "password"
-      placeholderTextColor='rgba(255, 255, 255, 0.7)'
-      secureTextEntry
-      returnKeyType='next'
-      style={styles.input} />
+        <TextInput
+          {...password}
+        placeholder = "password"
+        placeholderTextColor='rgba(255, 255, 255, 0.7)'
+        secureTextEntry
+        returnKeyType='next'
+        style={styles.input} />
 
-      <View>
-      {renderError(password)}
-      </View>
+        <View>
+        {renderError(password)}
+        </View>
 
-      <TouchableOpacity style={styles.buttonContainer} onPress={this.onLogIn}>
-      <Text style={styles.buttonText} >LOGIN</Text>
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonContainer} onPress={this.onLogIn}>
+        <Text style={styles.buttonText} >LOGIN</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity style={styles.buttonContainer} onPress={this.onSignUp}>
-      <Text style={styles.buttonText} >SIGNUP</Text>
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonContainer} onPress={this.onSignUp}>
+        <Text style={styles.buttonText} >SIGNUP</Text>
+        </TouchableOpacity>
 
-      </View>
-    ); // end return
-  } // end render
+        </View>
+      ); // end return
+    } // end render
+// }//
 } // end LogInForm
 
 const validate = (formProps) => {

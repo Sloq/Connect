@@ -11,7 +11,7 @@ import {
 
 import Loginform from './loginform';
 import Main from '../main';
-// import AlertContainer from './alerts/AlertContainer';
+import AlertContainer from '../alerts/AlertContainer';
 
 var LogIn = React.createClass({
   getInitialState() {
@@ -19,7 +19,7 @@ var LogIn = React.createClass({
   },
 
   render() {
-    var toggle = () => {
+    const toggle = () => {
       if (this.props.user_id) {
         return (
           <Main />
@@ -29,7 +29,8 @@ var LogIn = React.createClass({
           <Loginform />
         );
       }
-    };
+    };// end toggle
+
     return (
       <KeyboardAvoidingView
       behavior='padding'
@@ -45,6 +46,7 @@ var LogIn = React.createClass({
 
       <View style={styles.formContainer}>
         {toggle()}
+        <AlertContainer/>
       </View>
 
       </KeyboardAvoidingView>
