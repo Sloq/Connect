@@ -87,7 +87,7 @@ export default class Map extends Component {
         <MapView.Marker
           animateToRegion={true}
             coordinate={this.state.markerPosition}
-        >   
+        >
         </MapView.Marker>
         </MapView>
       </View>

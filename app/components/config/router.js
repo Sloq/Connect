@@ -4,10 +4,10 @@ import { Icon } from 'react-native-elements';
 
 import ContactList from '../screens/contact_list';
 import UserProfile from '../screens/user_profile';
-import MapPage from '../screens/map';
-import Map from '../map.js';
+import MapPage from '../map';
 import QRScanner from '../screens/camera';
 import ContactDetail from '../screens/contact_detail';
+import Qr from '../screens/qr';
 
 //will need to utilize StackNavigator with contact list so viewing a certain contacts info and going back brings you back to the contact list
 export const ContactStack = StackNavigator({
@@ -30,6 +30,13 @@ export const Tabs = TabNavigator({
           tabBarIcon: ({ tintColor }) => <Icon name='camera-alt' size={30} color={tintColor}/>
       }
     },
+    Qr: {
+      screen: Qr,
+      navigationOptions: {
+          tabBarlabel: 'MakeConnection',
+          tabBarIcon: ({ tintColor }) => <Icon name='share' size={30} color={tintColor}/>
+      }
+    },
     Profile: {
       screen: UserProfile,
       navigationOptions: {
@@ -45,9 +52,9 @@ export const Tabs = TabNavigator({
       }
     },
     Map: {
-      screen: Map,
+      screen: MapPage,
       navigationOptions: {
-          tabBarlabel: 'Map',
+          tabBarlabel: 'MapPage',
           tabBarIcon: ({ tintColor }) => <Icon name='map' size={30} color={tintColor}/>
       }
     }

@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import {
   Text,
   View,
-  ScrollView
+  ScrollView,
+  LayoutAnimation
 } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import { connections } from '../config/data';
+import { connect } from 'react-redux';
+
 
 class ContactList extends Component {
   onTap(connection) {
@@ -24,18 +27,18 @@ class ContactList extends Component {
   // />
 
   render() {
-    if (connections) {
+    if (this.props.contacts) {
     return (
       <ScrollView>
         <List>
-          {connections.map((connection) => (
+          {this.props.contacts.map((contact) => (
             <ListItem
-              key={connection.login.username}
+              key={contact.name}
               roundAvatar
-              avatar={{ uri: connection.picture }}
-              title={connection.name}
-              subtitle={connection.email}
-              onPress={() => this.onTap(connection)}
+              avatar={{ uri: contact.picture }}
+              title={contact.name}
+              subtitle={contact.email}
+              onPress={() => this.onTap(contact)}
             />
           ))}
         </List>
@@ -46,4 +49,8 @@ class ContactList extends Component {
   }
 }
 
-export default ContactList;
+const mapStateToProps = (state) => {
+  return {contacts: state.user.contacts};
+};
+
+module.exports = connect(mapStateToProps)(ContactList);
