@@ -16,6 +16,10 @@ class LogInForm extends Component {
   this.onSignUp = this.onSignUp.bind(this);
   }
 
+  componentDidMount(){
+    this.setState({loading: false});
+  }//end componentDidMount
+
   onLogIn() {
     const { dispatch, fields: {email, password} } = this.props;
     this.setState({
