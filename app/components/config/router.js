@@ -5,6 +5,7 @@ import { Icon } from 'react-native-elements';
 import ContactList from '../screens/contact_list';
 import UserProfile from '../screens/user_profile';
 import MapPage from '../screens/map';
+import Map from '../map.js';
 import QRScanner from '../screens/camera';
 import ContactDetail from '../screens/contact_detail';
 
@@ -44,9 +45,9 @@ export const Tabs = TabNavigator({
       }
     },
     Map: {
-      screen: MapPage,
+      screen: Map,
       navigationOptions: {
-          tabBarlabel: 'MapPage',
+          tabBarlabel: 'Map',
           tabBarIcon: ({ tintColor }) => <Icon name='map' size={30} color={tintColor}/>
       }
     }
