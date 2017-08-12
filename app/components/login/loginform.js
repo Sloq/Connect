@@ -7,12 +7,18 @@ import { userLogIn, userSignUp, addAlert } from '../../actions';
 class LogInForm extends Component {
   constructor(props){
     super(props);
+
     this.state = {
       loading: false
     };
+
   this.onLogIn = this.onLogIn.bind(this);
   this.onSignUp = this.onSignUp.bind(this);
   }
+
+  componentDidMount(){
+    this.setState({loading: false});
+  }//end componentDidMount
 
   onLogIn() {
     const { dispatch, fields: {email, password} } = this.props;

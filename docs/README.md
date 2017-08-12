@@ -16,7 +16,6 @@ By the start of Week 11, this app will, at a minimum, satisfy the following crit
 - [ ] Users able to Scan each other's QR codes
 - [ ] Use Google Maps API to display the time and location of networking
 - [ ] Be able to search for specific contacts
-- [ ] Use categories to organize your contacts
 - [ ] Production README
 
 ### Auxiliary Functionality

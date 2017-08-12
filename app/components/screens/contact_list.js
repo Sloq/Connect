@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import {
   Text,
   View,
-  ScrollView
+  ScrollView,
+  LayoutAnimation
 } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import { connections } from '../config/data';
+import { connect } from 'react-redux';
+
 
 class ContactList extends Component {
   onTap(connection) {
@@ -25,13 +28,30 @@ class ContactList extends Component {
 
   //Render
   render() {
+    if (this.props.contacts) {
     return (
-      <View style={{flex: 1}}>
-        <Header headerText="Contacts" />
-        <LibraryList/>
-      </View>
-    );
+      <ScrollView>
+        <List>
+          {this.props.contacts.map((contact) => (
+            <ListItem
+              key={contact.name}
+              roundAvatar
+              avatar={{ uri: contact.picture }}
+              title={contact.name}
+              subtitle={contact.email}
+              onPress={() => this.onTap(contact)}
+            />
+          ))}
+        </List>
+      </ScrollView>
+    );} else {
+      return (<Text>No Friends Yet</Text>);
+    }
   }
 }
 
-export default ContactList;
+const mapStateToProps = (state) => {
+  return {contacts: state.user.contacts};
+};
+
+module.exports = connect(mapStateToProps)(ContactList);

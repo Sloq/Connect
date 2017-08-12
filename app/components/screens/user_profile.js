@@ -9,17 +9,23 @@ import {
   View
 } from 'react-native';
 import { List, ListItem, Tile, switchButton } from 'react-native-elements';
-
-// Tile:
-//     imageSrc="picture"
+import { connect } from 'react-redux';
+import { fetchUser } from '../../util/apiUtil';
+import { updateUser } from '../../actions/userActions';
 
 // ListItem Title:
     //  onChangeText={(text) => this.setState({text})}
     //  value={this.state.text}
 
 class UserProfile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { user: this.props.user };
+  }
+
   onPressSave() {
     //save the shared profile to the database
+    this.props.dispatch(updateUser(this.state.user));
   }
 
   render() {
@@ -27,8 +33,8 @@ class UserProfile extends Component {
       <ScrollView >
         <Tile
           featured
-          title= "Stephen Loquet"
-          caption="email"
+          title= {this.props.user.name}
+          caption={this.props.user.email}
         />
       <Button
         onPress={this.onPressSave}
@@ -42,7 +48,7 @@ class UserProfile extends Component {
             leftIcon={{name:'account-circle',
                        color: 'grey'
                      }}
-            title="stephen"
+            title={this.props.user.name}
             subtitle="name"
             hideChevron
           />
@@ -54,12 +60,19 @@ class UserProfile extends Component {
             title={
                 <TextInput
                   style={{height: 35, width: 210}}
+                  onChangeText={(email) => {
+                    const stateUser = this.state.user;
+                    stateUser.email = email;
+                    this.setState({stateUser});
+                  }
+                }
+                  value={this.state.user.email}
                 />
             }
             subtitle='email'
             textInputKeyboardType='email-address'
             textInputOnChangeText={()=>{}}
-            switchButton={true}
+            switchButton={false}
             onSwitch={(e)=> e}
             switchOnTintColor="pink"
             hideChevron
@@ -72,6 +85,12 @@ class UserProfile extends Component {
             title={
                 <TextInput
                   style={{height: 35, width: 210}}
+                  onChangeText={(phone) => {
+                    const stateUser = this.state.user;
+                    stateUser.phone = phone;
+                    this.setState({stateUser});
+                  }}
+                  value={this.props.user.phone}
                 />
             }
             subtitle='phone'
@@ -91,6 +110,12 @@ class UserProfile extends Component {
             title={
                 <TextInput
                   style={{height: 35, width: 210}}
+                  onChangeText={(address) => {
+                    const stateUser = this.state.user;
+                    stateUser.address = address;
+                    this.setState({stateUser});
+                  }}
+                  value={this.props.user.address}
                 />
             }
             subtitle='address'
@@ -110,6 +135,12 @@ class UserProfile extends Component {
             title={
                 <TextInput
                   style={{height: 35, width: 210}}
+                  onChangeText={(birthday) => {
+                    const stateUser = this.state.user;
+                    stateUser.birthday = birthday;
+                    this.setState({stateUser});
+                  }}
+                  value={this.props.user.birthday}
                 />
             }
             subtitle='birthday'
@@ -129,28 +160,15 @@ class UserProfile extends Component {
             title={
                 <TextInput
                   style={{height: 35, width: 210}}
+                  onChangeText={(linkedin) => {
+                    const stateUser = this.state.user;
+                    stateUser.linkedin = linkedin;
+                    this.setState({stateUser});
+                  }}
+                  value={this.props.user.linkedin}
                 />
             }
             subtitle='LinkedIn'
-            textInputKeyboardType='default'
-            textInputOnChangeText={()=>{}}
-            switchButton={true}
-            onSwitch={(e)=> e}
-            switchOnTintColor="pink"
-            hideChevron
-          />
-
-          <ListItem
-            leftIcon={{name:'sc-snapchat',
-                      type:'evilicon',
-                      color: 'grey'
-                    }}
-            title={
-                <TextInput
-                  style={{height: 35, width: 210}}
-                />
-            }
-            subtitle='snapchat'
             textInputKeyboardType='default'
             textInputOnChangeText={()=>{}}
             switchButton={true}
@@ -165,9 +183,15 @@ class UserProfile extends Component {
                       color: 'grey'
                     }}
             title={
-                <TextInput
-                  style={{height: 35, width: 210}}
-                />
+              <TextInput
+                style={{height: 35, width: 210}}
+                onChangeText={(facebook) => {
+                  const stateUser = this.state.user;
+                  stateUser.facebook = facebook;
+                  this.setState({stateUser});
+                }}
+                value={this.props.user.facebook}
+              />
             }
             subtitle='facebook'
             textInputKeyboardType='default'
@@ -184,9 +208,15 @@ class UserProfile extends Component {
                       color: 'grey'
                     }}
             title={
-                <TextInput
-                  style={{height: 35, width: 210}}
-                />
+              <TextInput
+                style={{height: 35, width: 210}}
+                onChangeText={(instagram) => {
+                  const stateUser = this.state.user;
+                  stateUser.instagram = instagram;
+                  this.setState({stateUser});
+                }}
+                value={this.props.user.instagram}
+              />
             }
             subtitle='instagram'
             textInputKeyboardType='default'
@@ -203,9 +233,15 @@ class UserProfile extends Component {
                       color: 'grey'
                     }}
             title={
-                <TextInput
-                  style={{height: 35, width: 210}}
-                />
+              <TextInput
+                style={{height: 35, width: 210}}
+                onChangeText={(twitter) => {
+                  const stateUser = this.state.user;
+                  stateUser.twitter = twitter;
+                  this.setState({stateUser});
+                }}
+                value={this.props.user.twitter}
+              />
             }
             subtitle='Twitter'
             textInputKeyboardType='default'
@@ -222,49 +258,17 @@ class UserProfile extends Component {
                       color: 'grey'
                     }}
             title={
-                <TextInput
-                  style={{height: 35, width: 210}}
-                />
+              <TextInput
+                style={{height: 35, width: 210}}
+                onChangeText={(github) => {
+                  const stateUser = this.state.user;
+                  stateUser.github = github;
+                  this.setState({stateUser});
+                }}
+                value={this.props.user.github}
+              />
             }
             subtitle='Github'
-            textInputKeyboardType='default'
-            textInputOnChangeText={()=>{}}
-            switchButton={true}
-            onSwitch={(e)=> e}
-            switchOnTintColor="pink"
-            hideChevron
-          />
-
-          <ListItem
-            leftIcon={{name:'sc-kakao',
-                      type:'evilicon',
-                      color: 'grey'
-                    }}
-            title={
-                <TextInput
-                  style={{height: 35, width: 210}}
-                />
-            }
-            subtitle='kakao'
-            textInputKeyboardType='default'
-            textInputOnChangeText={()=>{}}
-            switchButton={true}
-            onSwitch={(e)=> e}
-            switchOnTintColor="pink"
-            hideChevron
-          />
-
-          <ListItem
-            leftIcon={{name:'line',
-                      type:'evilicon',
-                      color: 'grey'
-                    }}
-            title={
-                <TextInput
-                  style={{height: 35, width: 210}}
-                />
-            }
-            subtitle='line'
             textInputKeyboardType='default'
             textInputOnChangeText={()=>{}}
             switchButton={true}
@@ -294,4 +298,13 @@ const styles = StyleSheet.create({
   }
 });
 
-export default UserProfile;
+
+const mapDispatchToProps = dispatch => ({
+  updateUser: (user) => dispatch(updateUser(user))
+});
+
+const mapStateToProps = (state) => {
+  return {user: state.user};
+};
+
+module.exports = connect(mapStateToProps, mapDispatchToProps)(UserProfile);
