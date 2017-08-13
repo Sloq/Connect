@@ -21,7 +21,7 @@ class Qr extends Component {
     return (
       <View style={styles.container}>
         <View style = {styles.backgroundContainer}>
-          <Image source = {require('../images/play-stone.jpeg')} resizeMode = 'cover' style = {styles.backdrop} />
+          <Image source = {require('../images/circular.jpg')} resizeMode = 'cover' style = {styles.backdrop} />
         </View>
         <View style = {styles.overlay}>
           <QRCode
