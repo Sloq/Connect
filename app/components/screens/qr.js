@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   },
   overlay: {
     opacity: 0.8,
-    backgroundColor: '#000000',
+    backgroundColor: '#ffffff',
     justifyContent: 'center',
     flexDirection:'row',
     alignItems:'center',

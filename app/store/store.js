@@ -16,6 +16,7 @@ const defaultState = {
       instagram: "myInsta",
       twitter: "twitinator",
       github: "gitpocolypse",
+      pic: 'https://s-media-cache-ak0.pinimg.com/736x/63/0f/0e/630f0ef3f6f3126ca11f19f4a9b85243--dachshund-puppies-weenie-dogs.jpg',
       contacts: [{
                 name: "Tianyu Duan",
                 email: "tianyuduan@yahoo.com",

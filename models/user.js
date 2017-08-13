@@ -21,19 +21,22 @@ var userSchema = new Schema({
     type: String
   },
   name: String,
-  connectionsToMe: [String],
-  connectionsToOthers: [String],
-  photo:     String,
+  connectionsToMe: [Schema.Types.ObjectId],
+  connectionsToOthers: [Schema.Types.ObjectId],
+  pic:     String,
   phone:     String,
   address:   String,
   birthday:  String,
   linkedin:  String,
-  snapchat:  String,
   facebook:  String,
   instagram: String,
   twitter:   String,
-  github:    String
-}); // end userSchema
+  github:    String,
+  connectionDate: {
+    type:    Date,
+    default: Date.now
+  }
+});
 
 // this function will be executed before user is saved
 userSchema.pre('save', function(next){

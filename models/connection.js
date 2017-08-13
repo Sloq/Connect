@@ -19,11 +19,10 @@ var ConnectionSchema = new Schema({
   address:    String,
   birthday:   String,
   linkedin:   String,
-  snapchat:   String,
   facebook:   String,
   instagram:  String,
   twitter:    String,
-  github:     String
+  github:     String,
 });
 
 module.exports = mongoose.model('Connection', ConnectionSchema);

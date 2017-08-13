@@ -3,17 +3,17 @@
 var User = require('../models/user');
 
 //Below: covered in authentication_controller
-// exports.userCreate = function(req, res) {
-//   const newUser = new User(req.body);
-//   newUser.save(function(err) {
-//     if (err) {
-//       res.send(err);
-//     } else {
-//       // logIn(newUser)
-//       res.json(newUser);
-//     }
-//   });
-// };
+exports.create = function(req, res) {
+  const newUser = new User(req.body);
+  newUser.save(function(err) {
+    if (err) {
+      res.send(err);
+    } else {
+      // logIn(newUser)
+      res.json(newUser);
+    }
+  });
+};
 
 //I assume authentiction controller covers this action so isn't in router
 exports.show = function(req, res) {
@@ -22,6 +22,24 @@ exports.show = function(req, res) {
       res.send(err);
     } else {
       res.json(user);
+    }
+  });
+};
+
+exports.index = function(req, res) {
+  User.findById(req.params.userId, function(err, user) {
+    if (err) {
+      res.send(err);
+    } else {
+      User.find(
+        {'_id':{ $in: [user.connectionsToOthers]}
+      }, function(error, connections) {
+        if (error) {
+          res.send(err);
+        } else {
+          res.json(connections);
+        }
+      });
     }
   });
 };
