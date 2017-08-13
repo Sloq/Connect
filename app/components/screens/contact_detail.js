@@ -19,10 +19,6 @@ import {CardSection} from '../common';
 class ContactDetail extends Component {
 
 
-  handlePress() {
-
-  }
-
   componentWillUpdate() {
    LayoutAnimation.spring();
  }
