@@ -1,6 +1,7 @@
 import React from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
-import { Icon } from 'react-native-elements';
+import { Icon, Button } from 'react-native-elements';
+// import {Button} from 'react-native';
 import ContactList from '../screens/contact_list';
 import UserProfile from '../screens/user_profile';
 import MapPage from '../map';
@@ -9,11 +10,22 @@ import ContactDetail from '../screens/contact_detail';
 import Qr from '../screens/qr';
 
 //will need to utilize StackNavigator with contact list so viewing a certain contacts info and going back brings you back to the contact list
+
 export const ContactStack = StackNavigator({
   Contacts: {
     screen: ContactList,
     navigationOptions: {
-      title: 'Connections'
+    title: 'Contacts',
+    headerStyle:{ backgroundColor: '#3D6DCC', height: 69,
+   borderWidth: 2,
+    borderBottomColor: '#fff',},
+      headerTitleStyle:{ color: '#fff', fontSize: 18},
+      tintColor: '#fefefe',
+      headerRight: <Button title="Sign Out"
+      style={{color: 'white'}}
+      buttonStyle={{backgroundColor: 'transparent', borderRadius: 10}}
+      textStyle={{position: 'absolute', right: 3, borderBottomColor: '#47315a',}}
+       />,
     }
   },
   ContactDetail: {
@@ -44,9 +56,9 @@ export const Tabs = TabNavigator({
       }
     },
     Contacts: {
-      screen: ContactList,
+      screen: ContactStack,
       navigationOptions: {
-          tabBarlabel: 'ContactList',
+          tabBarlabel: 'ContactStack',
           tabBarIcon: ({ tintColor }) => <Icon name='people' size={30} color={tintColor} activeTintColor={'#3ef707'}/>
       }
     },

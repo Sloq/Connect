@@ -26,7 +26,11 @@ const defaultState = {
                 linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
                 facebook: 'https://www.facebook.com/tianyu.duan',
                 github: 'https://github.com/tianyuduan',
-                contacts: []
+                contacts: [],
+                location: {
+                  lattitude: 0,
+                  longitude: 0,
+                }
               },
               {
                 name: "Leo Liao",

@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, Image} from 'react-native';
 import { BarCodeScanner, Permissions } from 'expo';
+import { List, ListItem, Header, Button } from 'react-native-elements';
 
 export default class QRScanner extends React.Component {
   state = {
@@ -21,7 +22,6 @@ export default class QRScanner extends React.Component {
     } else {
       return (
         <View style={{flex: 1}}>
-
           <StatusBar
      barStyle='light-content'
      />
@@ -29,6 +29,34 @@ export default class QRScanner extends React.Component {
             onBarCodeRead={this._handleBarCodeRead}
             style={StyleSheet.absoluteFill}
           />
+
+          <View style={{position: 'absolute',
+          flex: 1,
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          alignItems: 'center',
+          justifyContent: 'center',}}>
+          <Image
+          source={require('../images/123.png')}
+          style={{width: 300, height: 300, opacity: 0.5,
+          justifyContent: 'center',
+          flexDirection:'row',
+          alignItems:'center',
+        Color: 'white'
+      }}/>
+          </View>
+          <Header
+      statusBarProps={{ barStyle: 'light-content' }}
+      centerComponent={{ text: 'Camera', style: { paddingLeft: 5,color: '#fff', fontSize: 18, opacity: 1, textAlign: 'center'} }}
+      rightComponent= {<Button title="Sign Out"
+      style={{color: 'white'}}
+      buttonStyle={{backgroundColor: 'transparent', borderRadius: 10}}
+      textStyle={{position: 'absolute', right: -15}}
+       />}
+      outerContainerStyles={{ backgroundColor: '#3D6DCC' , opacity: 1,}}
+    />
               <View style={styles.preview}></View>
         </View>
       );
@@ -59,18 +87,18 @@ const styles = StyleSheet.create({
     right: 0,
     backgroundColor: 'rgba(0,0,0, 0)'
     } ,
-   preview: {
-      width: 350,
-      height: 350,
-      borderRadius: 200,
-      borderWidth: 1,
-      borderColor: '#FFF',
-      backgroundColor: '#2980b9',
-      alignItems: 'center',
-      marginTop: '10%',
-      marginBottom: '10%',
-      marginLeft: '7%',
-      justifyContent: 'center',
-      backgroundColor: 'rgba(0,0,0, .1)'
-    },
+  //  preview: {
+  //     width: 350,
+  //     height: 350,
+  //     borderRadius: 200,
+  //     borderWidth: 1,
+  //     borderColor: '#FFF',
+  //     backgroundColor: '#2980b9',
+  //     alignItems: 'center',
+  //     marginTop: '10%',
+  //     marginBottom: '10%',
+  //     marginLeft: '7%',
+  //     justifyContent: 'center',
+  //     backgroundColor: 'rgba(0,0,0, .1)'
+  //   },
 });
