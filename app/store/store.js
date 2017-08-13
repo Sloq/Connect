@@ -17,6 +17,7 @@ const defaultState = {
       twitter: "twitinator",
       github: "gitpocolypse",
       contacts: [{
+                profileImg: "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/002/155/medium/Tianyu_Duan_2.jpg?1496696821",
                 name: "Tianyu Duan",
                 email: "tianyuduan@yahoo.com",
                 birthday: "Sept 26",

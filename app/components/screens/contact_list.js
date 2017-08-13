@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 
 class ContactList extends Component {
   onTap(connection) {
-    this.props.navigation.navigate('ContactDetail', connection);
+    this.props.navigation.navigate('ContactDetail', connections);
   }
 
   // <SearchBar
