@@ -3,6 +3,7 @@ import QRCode from 'react-native-qrcode-svg';
 import {
   StyleSheet,
   Text,
+  Image,
   View
 } from 'react-native';
 import { fetchUser } from '../../util/apiUtil';
@@ -14,30 +15,58 @@ class Qr extends Component {
   //   return ({user: "Stephen"});
   // }
 
+
+
   render() {
     return (
       <View style={styles.container}>
-        <QRCode
-          value={this.props.userId}
-          size={300}
-        />
+        <View style = {styles.backgroundContainer}>
+          <Image source = {require('../images/play-stone.jpeg')} resizeMode = 'cover' style = {styles.backdrop} />
+        </View>
+        <View style = {styles.overlay}>
+          <QRCode
+            value={this.props.userId}
+            size={300}
+            fgColor="#ffffff"
+            style={styles.logo}
+          />
+        </View>
+
       </View>
     );
   }
 }
 
+
 const styles = StyleSheet.create({
+  backgroundContainer: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+  },
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#666666'
+    justifyContent: 'center',
   },
-  welcome: {
-    fontSize: 20,
+  overlay: {
+    opacity: 0.8,
+    backgroundColor: '#000000',
+    justifyContent: 'center',
+    flexDirection:'row',
+    alignItems:'center',
+  },
+  backdrop: {
+    flex:1,
+    flexDirection: 'column'
+  },
+  headline: {
+    fontSize: 18,
     textAlign: 'center',
-    margin: 10,
-    color: '#ffffff'
+    backgroundColor: 'black',
+    color: 'white'
   }
 });
 

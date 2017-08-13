@@ -32,21 +32,23 @@ class UserProfile extends Component {
     return (
       <ScrollView >
         <Tile
+          imageSrc={{uri: this.props.user.pic}}
           featured
           title= {this.props.user.name}
           caption={this.props.user.email}
         />
       <Button
+        justifyContent='center'
         onPress={this.onPressSave}
         title="Save Share Settings"
-        color="#841584"
+        style={styles.button}
         accessibilityLabel="Save Share Settings"
       />
         <List>
 
           <ListItem
             leftIcon={{name:'account-circle',
-                       color: 'grey'
+                       color: '#37c6a5'
                      }}
             title={this.props.user.name}
             subtitle="name"
@@ -55,7 +57,7 @@ class UserProfile extends Component {
 
           <ListItem
             leftIcon={{name:'email',
-                      color: 'grey'
+                      color: '#ffe330'
                     }}
             title={
                 <TextInput
@@ -80,7 +82,7 @@ class UserProfile extends Component {
 
           <ListItem
             leftIcon={{name:'phone',
-                      color: 'grey'
+                      color: '#33dd00'
                     }}
             title={
                 <TextInput
@@ -105,7 +107,7 @@ class UserProfile extends Component {
           <ListItem
             leftIcon={{name:'sc-telegram',
                       type:'evilicon',
-                      color: 'grey'
+                      color: '#ff7830'
                     }}
             title={
                 <TextInput
@@ -130,7 +132,7 @@ class UserProfile extends Component {
           <ListItem
             leftIcon={{name:'calendar',
                       type:'evilicon',
-                      color: 'grey'
+                      color: 'red'
                     }}
             title={
                 <TextInput
@@ -155,7 +157,7 @@ class UserProfile extends Component {
           <ListItem
             leftIcon={{name:'sc-linkedin',
                       type:'evilicon',
-                      color: 'grey'
+                      color: '#0077b5'
                     }}
             title={
                 <TextInput
@@ -180,7 +182,7 @@ class UserProfile extends Component {
           <ListItem
             leftIcon={{name:'sc-facebook',
                       type:'evilicon',
-                      color: 'grey'
+                      color: '#3d589b'
                     }}
             title={
               <TextInput
@@ -205,7 +207,7 @@ class UserProfile extends Component {
           <ListItem
             leftIcon={{name:'sc-instagram',
                       type:'evilicon',
-                      color: 'grey'
+                      color: '#7b38ab'
                     }}
             title={
               <TextInput
@@ -230,7 +232,7 @@ class UserProfile extends Component {
           <ListItem
             leftIcon={{name:'sc-twitter',
                       type:'evilicon',
-                      color: 'grey'
+                      color: '#70c1f5'
                     }}
             title={
               <TextInput
@@ -255,7 +257,7 @@ class UserProfile extends Component {
           <ListItem
             leftIcon={{name:'sc-github',
                       type:'evilicon',
-                      color: 'grey'
+                      color: 'black'
                     }}
             title={
               <TextInput
@@ -295,6 +297,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 10,
     color: '#ffffff'
+  },
+  button: {
+    justifyContent: 'center',
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: "#841584",
   }
 });
 

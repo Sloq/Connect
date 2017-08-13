@@ -14,7 +14,6 @@ export const userLogIn = (email, password) => (dispatch) => {
            console.log(token);
            console.log(user_id);
            dispatch(userSignIn(user_id));
-
          }).catch((error) => {
            dispatch(addAlert("user does not exists"));
          })

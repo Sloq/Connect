@@ -26,6 +26,7 @@ class ContactList extends Component {
   //     onChangeText={()=>{}}
   // />
 
+  //Render
   render() {
     if (this.props.contacts) {
     return (
