@@ -6,7 +6,6 @@ import UserProfile from '../screens/user_profile';
 import MapPage from '../map';
 import QRScanner from '../screens/camera';
 import ContactDetail from '../screens/contact_detail';
-import LibraryList from '../contacts/LibraryList.js';
 import Qr from '../screens/qr';
 
 //will need to utilize StackNavigator with contact list so viewing a certain contacts info and going back brings you back to the contact list
@@ -27,44 +26,53 @@ export const Tabs = TabNavigator({
       screen: QRScanner,
       navigationOptions: {
           tabBarlabel: 'MakeConnection',
-          tabBarIcon: ({ tintColor }) => <Icon name='camera-alt' size={30} color={tintColor}/>
+          tabBarIcon: ({ tintColor }) => <Icon name='camera-alt' size={30} activeTintColor={'#ffe330'} color={tintColor}/>
       }
     },
     Qr: {
       screen: Qr,
       navigationOptions: {
           tabBarlabel: 'MakeConnection',
-          tabBarIcon: ({ tintColor }) => <Icon name='share' size={30} color={tintColor}/>
+          tabBarIcon: ({ tintColor }) => <Icon name='share' size={30} activeTintColor={'#ff3131'} color={tintColor}/>
       }
     },
     Profile: {
       screen: UserProfile,
       navigationOptions: {
           tabBarlabel: 'UserProfile',
-          tabBarIcon: ({ tintColor }) => <Icon name='account-box' size={30} color={tintColor}/>
+          tabBarIcon: ({ tintColor }) => <Icon name='account-box' size={30} activeTintColor={'#30ffa2'} color={tintColor}/>
       }
     },
     Contacts: {
-      screen: LibraryList,
+      screen: ContactList,
       navigationOptions: {
-          tabBarlabel: 'LibraryList',
-          tabBarIcon: ({ tintColor }) => <Icon name='people' size={30} color={tintColor}/>
+          tabBarlabel: 'ContactList',
+          tabBarIcon: ({ tintColor }) => <Icon name='people' size={30} color={tintColor} activeTintColor={'#3ef707'}/>
       }
     },
     Map: {
       screen: MapPage,
       navigationOptions: {
           tabBarlabel: 'MapPage',
-          tabBarIcon: ({ tintColor }) => <Icon name='map' size={30} color={tintColor}/>
+          tabBarIcon: ({ tintColor }) => <Icon name='map' size={30} color={tintColor} activeTintColor={'#8a2ff0'}/>
       }
     }
   }, {tabBarPosition: "bottom", tabBarOptions: {
-      activeTintColor: '#e91e63',
+      tintColor: '#e0e0e0',
+      activeTintColor: '#68ff93',
       labelStyle: {
         fontSize: 11,
       },
       style: {
-        backgroundColor: 'blue',
+        backgroundColor: '#3d3d3d',
+        borderWidth: 1,
+        borderRadius: 2,
+        borderColor: '#ddd',
+        borderBottomWidth: 0,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2
       }
     }
   }
