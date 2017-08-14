@@ -43,16 +43,16 @@ All of the user's scanned contacts will propagate here. Upon selection of a cont
 
 
 ### Map
-Utilizing Airbnb's map API, all of your contacts will be mapped with a pin that details the location of sharing each other's contact information. Over time, users will be able visualize their hotspots for social and business networking.
+Utilizing Airbnb's map API, all of your contacts will be mapped with pins that details the location where the sharing of each other's contact information happened. Over time, users will be able visualize their hotspots for social and business networking.
 
 ![gif of map](https://user-images.githubusercontent.com/26663031/29267848-4e84d288-809f-11e7-89a8-d98c49f3cd70.gif)
 
 ## Challenges
-To attempt this mobile app in one week was a daunting task. The biggest challenge was learning five new technologies in the span of a week and utilizing what we learned to craft a mobile app that fit our initial goals for functionality. Debugging, learning frameworks and managing an efficient git workflow consumed a lot of our time at the beginning. Towards the end of the week, we were able to improve our time efficiency, cooperation, quality of code, in addition, to swiftly wrapping our components together and offering a presentable prototype.
+To attempt this mobile app in one week was a daunting task. The biggest challenge was learning five new technologies in the span of a week and utilizing what we learned to craft a mobile app that fit our initial goals for functionality. Debugging, learning frameworks and managing an efficient git workflow consumed a lot of our time at the beginning. Towards the end of the week, we were able to improve our time efficiency, cooperation, quality of code, in addition to, swiftly wrapping our components together and offering a presentable prototype.
 
 ## Future Improvements
 
-### implement functionality to application from backend
+### Implement functionality to application from backend
 One big challenge for this application was connecting react-native properly to ExpressJS. We managed to set up User Authentication within one week's time, but was short on time in wiring the backend logic to the rest of our react components
 
 ### Phase2
