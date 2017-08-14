@@ -60,4 +60,5 @@ Our secondary goal for this app is to send network requests automatically. This 
 
 ###### Credits
 Developers: Tianyu Duan, Stephen Loquet, Leo Liao
+<br />
 App idea accredited to: Vivian Hsu
