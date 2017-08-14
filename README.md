@@ -6,14 +6,11 @@
 
 ConneQt is an mobile application that is designed to improve the process of exchanging contact information. We created ConneQt to aid individuals in networking. The process is simple. To get ConneQted, simply scan another user's QR code.
 
-More and more social networking platforms are on the rise, it is already becoming a hassle to add or(find) the same person via LinkedIn, Facebook, Twitter, Skype, etc. Although this app is still under development, we hope ConneQt can improve people’s lives by helping them borden their horizons through making new acquaintances easier.
+With more and more social networking platforms are on the rise, it is ALREADY becoming a hassle to add/find another person via LinkedIn, Facebook, Twitter, Skype, etc. Although this app is still under development, we hope ConneQt can improve peoples lives by helping them borden their horizons through easier networking.
 
 Our mobile application utilizes the MERN web stack. These frameworks stand for MongoDB, Express, React-Native, Node.js We also utilized Redux with React-Native.
 
 ## Features & Implementation
-
-### Home Page
-Splash screen to be rendered on application launch.
 
 ### User Authentication
 Users can signup/log in. User Auth is implemented with Express backend. A User will have access to all the features of the app.
@@ -51,7 +48,7 @@ Utilizing Airbnb's map API, all of your contacts will be mapped with a pin that 
 ![gif of map](https://user-images.githubusercontent.com/26663031/29267848-4e84d288-809f-11e7-89a8-d98c49f3cd70.gif)
 
 ## Challenges
-To attempt this mobile app in one week was a daunting task. The biggest challenge was learning five new technologies in the span of a week and utilizing what we learned to craft a mobile app that fit our initial goals for functionality. Debugging, learning frameworks and managing an efficient git workflow consumed a lot of our time at the beginning. Towards the end of the week, we were able to improve our time efficiency, cooperation, quality of code, swiftly wrap our components together and offer a presentable prototype.
+To attempt this mobile app in one week was a daunting task. The biggest challenge was learning five new technologies in the span of a week and utilizing what we learned to craft a mobile app that fit our initial goals for functionality. Debugging, learning frameworks and managing an efficient git workflow consumed a lot of our time at the beginning. Towards the end of the week, we were able to improve our time efficiency, cooperation, quality of code, in addition, to swiftly wrapping our components together and offering a presentable prototype.
 
 ## Future Improvements
 
@@ -61,6 +58,6 @@ One big challenge for this application was connecting react-native properly to E
 ### Phase2
 Our secondary goal for this app is to send network requests automatically. This means upon scanning another user's QR code, based on that specific user's filtered information, ConneQt will submit add requests to all the social platforms for you. One of the problems we see right now is utilizing Facebook/Twitter/Instagram/Linkedin APIs to send add requests. There will be permission issues.
 
-###### credits
+###### Credits
 Developers: Tianyu Duan, Stephen Loquet, Leo Liao
 App idea accredited to: Vivian Hsu
