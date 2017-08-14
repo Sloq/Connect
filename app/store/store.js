@@ -27,6 +27,7 @@ const defaultState = {
       github: "gitpocolypse",
       pic: 'https://res.cloudinary.com/cloudmccloud/image/upload/v1502674980/connect/dog14.jpg',
       contacts: [{
+                profileImg: "http://res.cloudinary.com/djubcegxh/image/upload/v1502666889/panda-03_uvspyn.png",
                 name: "Tianyu Duan",
                 email: "tianyuduan@yahoo.com",
                 birthday: "Sept 26",
@@ -36,9 +37,14 @@ const defaultState = {
                 linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
                 facebook: 'https://www.facebook.com/tianyu.duan',
                 github: 'https://github.com/tianyuduan',
-                contacts: []
+                contacts: [],
+                location: {
+                  lattitude: 37.791305,
+                  longitude: -122.393735,
+                }
               },
               {
+                profileImg: "http://res.cloudinary.com/djubcegxh/image/upload/v1502666889/panda-01_epa1ov.png",
                 name: "Leo Liao",
                 email: "ducleoliao@gmail.com",
                 birthday: "Sept 26",
@@ -48,9 +54,30 @@ const defaultState = {
                 linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
                 facebook: 'https://www.facebook.com/tianyu.duan',
                 github: 'https://github.com/tianyuduan',
-                contacts: []
+                contacts: [],
+                location: {
+                  lattitude: 37.760908,
+                  longitude: -122.435004,
+                }
               },
               {
+              profileImg: "http://res.cloudinary.com/djubcegxh/image/upload/v1502666889/panda-02_fodhc3.png",
+              name: "Stephen Loquet",
+              email: "tianyuduan@yahoo.com",
+              birthday: "Sept 26",
+              address: "735 Burnette Ave, SF, CA",
+              phone: "5303121541",
+              linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
+              facebook: 'https://www.facebook.com/tianyu.duan',
+              github: 'https://github.com/tianyuduan',
+              contacts: [],
+              location: {
+                lattitude: 34.238424,
+                longitude: -117.235801,
+              }
+            },
+              {
+              profileImg: "http://res.cloudinary.com/djubcegxh/image/upload/v1502666889/panda-04_bbfaeo.png",
               name: "Anastassia Bobokalonova",
               email: "tianyuduan@yahoo.com",
               birthday: "Sept 26",
@@ -60,9 +87,14 @@ const defaultState = {
               linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
               facebook: 'https://www.facebook.com/tianyu.duan',
               github: 'https://github.com/tianyuduan',
-              contacts: []
+              contacts: [],
+              location: {
+                lattitude: 37.791305,
+                longitude: -122.393735,
+              }
             },
             {
+            profileImg: "http://res.cloudinary.com/djubcegxh/image/upload/v1502666889/panda-05_kanore.png",
             name: "Alex Park",
             email: "tianyuduan@yahoo.com",
             birthday: "Sept 26",
@@ -72,9 +104,14 @@ const defaultState = {
             linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
             facebook: 'https://www.facebook.com/tianyu.duan',
             github: 'https://github.com/tianyuduan',
-            contacts: []
+            contacts: [],
+            location: {
+              lattitude: 37.791305,
+              longitude: -122.393735,
+            }
           },
           {
+          profileImg: "http://res.cloudinary.com/djubcegxh/image/upload/v1502666889/panda-06_wezx17.png",
           name: "Atom Crimi",
           email: "tianyuduan@yahoo.com",
           birthday: "Sept 26",
@@ -84,8 +121,13 @@ const defaultState = {
           linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
           facebook: 'https://www.facebook.com/tianyu.duan',
           github: 'https://github.com/tianyuduan',
-          contacts: []
+          contacts: [],
+          location: {
+            lattitude: 37.791305,
+            longitude: -122.393735,
+          }
         },    {
+            profileImg: "http://res.cloudinary.com/djubcegxh/image/upload/v1502666890/panda-07_bqep0k.png",
             name: "Cherry Wing-Yu Lam",
             email: "tianyuduan@yahoo.com",
             birthday: "Sept 26",
@@ -95,9 +137,14 @@ const defaultState = {
             linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
             facebook: 'https://www.facebook.com/tianyu.duan',
             github: 'https://github.com/tianyuduan',
-            contacts: []
+            contacts: [],
+            location: {
+              lattitude: 37.791305,
+              longitude: -122.393735,
+            }
           },
           {
+            profileImg: "http://res.cloudinary.com/djubcegxh/image/upload/v1502666890/panda-08_emgrtq.png",
           name: "Clare Hsu",
           email: "tianyuduan@yahoo.com",
           birthday: "Sept 26",
@@ -107,9 +154,14 @@ const defaultState = {
           linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
           facebook: 'https://www.facebook.com/tianyu.duan',
           github: 'https://github.com/tianyuduan',
-          contacts: []
+          contacts: [],
+          location: {
+            lattitude: 37.791305,
+            longitude: -122.393735,
+          }
         },
         {
+        profileImg: "http://res.cloudinary.com/djubcegxh/image/upload/v1502666890/panda-09_wnkexq.png",
         name: "Sean O'Reilly",
         email: "tianyuduan@yahoo.com",
         birthday: "Sept 26",
@@ -119,9 +171,14 @@ const defaultState = {
         linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
         facebook: 'https://www.facebook.com/tianyu.duan',
         github: 'https://github.com/tianyuduan',
-        contacts: []
+        contacts: [],
+        location: {
+          lattitude: 37.791305,
+          longitude: -122.393735,
+        }
       },
       {
+      profileImg: "http://res.cloudinary.com/djubcegxh/image/upload/v1502666889/panda-03_uvspyn.png",
       name: "Zachary Greathouse",
       email: "tianyuduan@yahoo.com",
       birthday: "Sept 26",
@@ -131,7 +188,11 @@ const defaultState = {
       linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
       facebook: 'https://www.facebook.com/tianyu.duan',
       github: 'https://github.com/tianyuduan',
-      contacts: []
+      contacts: [],
+      location: {
+        lattitude: 37.791305,
+        longitude: -122.393735,
+      }
       }
     ]
   }

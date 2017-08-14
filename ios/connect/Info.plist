@@ -45,6 +45,14 @@
 	<string></string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>UIAppFonts</key>
+    <array>
+        <string>Roboto-BoldItalic.ttf</string>
+        <string>Roboto-Medium.ttf</string>
+        <string>Roboto-MediumItalic.ttf</string>
+        <string>Roboto-Regular.ttf</string>
+        <string>Roboto-Bold.ttf</string>
+    </array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

@@ -5,7 +5,7 @@ import {
   Text,
   View, Dimensions
 } from 'react-native';
-
+import { connect } from 'react-redux';
 import { MapView } from 'expo';
 
 
@@ -87,6 +87,7 @@ export default class Map extends Component {
         <MapView.Marker
           animateToRegion={true}
             coordinate={this.state.markerPosition}
+            title='Marker: Tianyu Duan'
         >
         </MapView.Marker>
         </MapView>
@@ -121,3 +122,9 @@ const styles = StyleSheet.create({
     right: 0,
   },
 });
+
+const mapStateToProps = (state) => {
+  return {contacts: state.user.contacts};
+};
+
+module.exports = connect(mapStateToProps)(Map);

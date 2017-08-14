@@ -3,8 +3,6 @@ import {AppRegistry, Text, View, StyleSheet, KeyboardAvoidingView,
   TextInput, TouchableOpacity, StatusBar} from 'react-native';
   import { connect } from 'react-redux';
 
-
-
 export default class QRscreen extends Component{
 
   render(){
@@ -12,7 +10,6 @@ export default class QRscreen extends Component{
       <View
       style={styles.container}
       >
-
       <TextInput
         placeholder="QR CODE HERE"
         placeholderTextColor='rgba(255, 255, 255, 0.7)'
@@ -21,7 +18,6 @@ export default class QRscreen extends Component{
         autoCorrect={false}
         style={styles.input}
       />
-
       </View>
     );
   }
