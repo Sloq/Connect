@@ -36,7 +36,7 @@ class ContactList extends Component {
             <ListItem
               key={contact.name}
               roundAvatar
-              avatar={{ uri: contact.picture }}
+              avatar={{ uri: contact.pic }}
               title={contact.name}
               subtitle={contact.email}
               onPress={() => this.onTap(contact)}

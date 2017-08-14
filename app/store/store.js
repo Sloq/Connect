@@ -3,6 +3,15 @@ import thunk from 'redux-thunk'; // for async action
 import {createStore, compose, applyMiddleware} from 'redux';
 import {AsyncStorage} from 'react-native';
 import {persistStore, autoRehydrate} from 'redux-persist';
+import { fetchUser, listAllContacts } from '../util/apiUtil';
+
+// const userData = fetchUser("59910c6edf09500a600b5449");
+// const contactData = listAllContacts("59910c6edf09500a600b5449");
+// userData.contacts = contactData;
+//
+// const defaultState = {
+//   user: userData
+// };
 
 const defaultState = {
   user: {_id: "1233456677id",
@@ -16,11 +25,12 @@ const defaultState = {
       instagram: "myInsta",
       twitter: "twitinator",
       github: "gitpocolypse",
-      pic: 'https://s-media-cache-ak0.pinimg.com/736x/63/0f/0e/630f0ef3f6f3126ca11f19f4a9b85243--dachshund-puppies-weenie-dogs.jpg',
+      pic: 'https://res.cloudinary.com/cloudmccloud/image/upload/v1502674980/connect/dog14.jpg',
       contacts: [{
                 name: "Tianyu Duan",
                 email: "tianyuduan@yahoo.com",
                 birthday: "Sept 26",
+                pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1502674806/connect/dog2.jpg",
                 address: "735 Burnette Ave, SF, CA",
                 phone: "5303121541",
                 linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
@@ -33,6 +43,7 @@ const defaultState = {
                 email: "ducleoliao@gmail.com",
                 birthday: "Sept 26",
                 address: "735 Burnette Ave, SF, CA",
+                pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1502674807/connect/dog13.jpg",
                 phone: "5303121541",
                 linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
                 facebook: 'https://www.facebook.com/tianyu.duan',
@@ -40,22 +51,12 @@ const defaultState = {
                 contacts: []
               },
               {
-              name: "Stephen Loquet",
-              email: "tianyuduan@yahoo.com",
-              birthday: "Sept 26",
-              address: "735 Burnette Ave, SF, CA",
-              phone: "5303121541",
-              linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
-              facebook: 'https://www.facebook.com/tianyu.duan',
-              github: 'https://github.com/tianyuduan',
-              contacts: []
-            },
-              {
               name: "Anastassia Bobokalonova",
               email: "tianyuduan@yahoo.com",
               birthday: "Sept 26",
               address: "735 Burnette Ave, SF, CA",
               phone: "5303121541",
+              pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1502674807/connect/dog12.jpg",
               linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
               facebook: 'https://www.facebook.com/tianyu.duan',
               github: 'https://github.com/tianyuduan',
@@ -67,6 +68,7 @@ const defaultState = {
             birthday: "Sept 26",
             address: "735 Burnette Ave, SF, CA",
             phone: "5303121541",
+            pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1502674813/connect/dog11.jpg",
             linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
             facebook: 'https://www.facebook.com/tianyu.duan',
             github: 'https://github.com/tianyuduan',
@@ -78,6 +80,7 @@ const defaultState = {
           birthday: "Sept 26",
           address: "735 Burnette Ave, SF, CA",
           phone: "5303121541",
+          pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1502674807/connect/dog10.jpg",
           linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
           facebook: 'https://www.facebook.com/tianyu.duan',
           github: 'https://github.com/tianyuduan',
@@ -88,6 +91,7 @@ const defaultState = {
             birthday: "Sept 26",
             address: "735 Burnette Ave, SF, CA",
             phone: "5303121541",
+            pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1502674806/connect/dog1.jpg",
             linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
             facebook: 'https://www.facebook.com/tianyu.duan',
             github: 'https://github.com/tianyuduan',
@@ -99,6 +103,7 @@ const defaultState = {
           birthday: "Sept 26",
           address: "735 Burnette Ave, SF, CA",
           phone: "5303121541",
+          pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1502674806/connect/cat1.jpg",
           linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
           facebook: 'https://www.facebook.com/tianyu.duan',
           github: 'https://github.com/tianyuduan',
@@ -110,6 +115,7 @@ const defaultState = {
         birthday: "Sept 26",
         address: "735 Burnette Ave, SF, CA",
         phone: "5303121541",
+        pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1502674813/connect/dog3.jpg",
         linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
         facebook: 'https://www.facebook.com/tianyu.duan',
         github: 'https://github.com/tianyuduan',
@@ -121,6 +127,7 @@ const defaultState = {
       birthday: "Sept 26",
       address: "735 Burnette Ave, SF, CA",
       phone: "5303121541",
+      pic: "https://res.cloudinary.com/cloudmccloud/image/upload/v1502674806/connect/dog4.jpg",
       linkedin: "https://www.linkedin.com/in/tianyu-duan-96b289107/",
       facebook: 'https://www.facebook.com/tianyu.duan',
       github: 'https://github.com/tianyuduan',

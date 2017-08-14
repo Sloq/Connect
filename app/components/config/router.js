@@ -44,7 +44,7 @@ export const Tabs = TabNavigator({
       }
     },
     Contacts: {
-      screen: ContactList,
+      screen: ContactStack,
       navigationOptions: {
           tabBarlabel: 'ContactList',
           tabBarIcon: ({ tintColor }) => <Icon name='people' size={30} color={tintColor} activeTintColor={'#3ef707'}/>

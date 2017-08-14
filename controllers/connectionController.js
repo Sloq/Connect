@@ -1,4 +1,3 @@
-// import mongoose from 'mongoose';
 var mongoose = require('mongoose');
 var Connection = require('../models/connection');
 var User = require('../models/user');
@@ -29,19 +28,20 @@ exports.create = function(req, res) {
   );
 };
 
-//to get this method to work will need to pass user email in body
 exports.show = function(req, res) {
-  Connection.findById(
+  User.findById(
     req.params.connectionId,
-    function(err, connection) {
+    function(err, user) {
       if (err) {
         res.send(err);
       } else {
-        User.findOneAndUpdate({"email": req.body.email}, {$push: {"connectionsToOthers": req.params.connectionId}}, function(error, user) {
+        User.find(
+          {'_id':{ $in: user.connectionsToOthers}
+        }, function(error, connections) {
           if (error) {
             res.send(error);
           } else {
-            res.json(connection);
+            res.json(connections);
           }
         });
       }

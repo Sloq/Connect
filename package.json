@@ -26,6 +26,7 @@
     "expo": "^19.0.1",
     "express": "^4.15.4",
     "jwt-simple": "^0.5.1",
+    "mongodb": "^2.2.31",
     "mongoose": "^4.11.6",
     "morgan": "^1.8.2",
     "nativescript-open-app": "^0.2.0",

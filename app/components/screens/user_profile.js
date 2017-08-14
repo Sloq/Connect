@@ -25,7 +25,7 @@ class UserProfile extends Component {
 
   onPressSave() {
     //save the shared profile to the database
-    this.props.dispatch(updateUser(this.state.user));
+    this.props.updateUser(this.state.user);
   }
 
   render() {
