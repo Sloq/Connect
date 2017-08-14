@@ -1,6 +1,8 @@
 # Connect
 
-[Heroku Link]
+[ConneQt][heroku]
+
+[heroku]: https://conneqt.herokuapp.com/
 
 ## Minimum Viable Product/ Functionality
 
