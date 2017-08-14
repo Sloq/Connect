@@ -7,10 +7,10 @@ import {
   LayoutAnimation,
   Image,
   Text,
-  View, StatusBar
+  View, StatusBar, TextInput
 } from 'react-native';
 import { connect } from 'react-redux';
-import { List, ListItem, Tile} from 'react-native-elements';
+import { List, ListItem, Tile, SocialIcon, Icon, Button} from 'react-native-elements';
 import * as actions from '../../actions';
 import Communications from 'react-native-communications';
 import {CardSection} from '../common';
@@ -34,13 +34,8 @@ class ContactDetail extends Component {
     return (
       <ScrollView>
 
-        <StatusBar
-       backgroundColor="blue"
-       barStyle="dark-content"
-     />
-
         <Tile
-          imageSrc={require('../images/simple1.jpg')}
+          imageSrc={require('../images/white7.jpg')}
           imageContainerStyle={{opacity: .7}}
           title={name}
           titleStyle={{
@@ -66,75 +61,195 @@ class ContactDetail extends Component {
             justifyContent: 'center',
           }}>
 
+          <List>
+            <StatusBar
+           backgroundColor="blue"
+           barStyle="dark-content"
+         />
 
-          <CardSection>
-          <TouchableOpacity onPress={() =>
-            Communications.email([email],null,null,'My Subject','Greetings')}>
-              <View>
-                 <Text style={{height: 50, paddingLeft: 10}}>
-                   Email:  {email}
-                 </Text>
-                 </View>
-                 </TouchableOpacity>
-                 </CardSection>
+            <ListItem
+              leftIcon={<Icon
+             raised
+             name='email'
+             color='#f50'
+              />
+              }
+              rightIcon={<Button
+                buttonStyle={{backgroundColor: '#3498db', borderRadius: 10, marginTop: '9%'}}
+                textStyle={{textAlign: 'center'}}
+                title={`ConneQt!`}
+                onPress={() => Communications.email([email],null,null,'My Subject','Greetings')}
+              />
+              }
+              title={
+                  <Text style={{height: 35, width: 210, marginLeft: 24, marginTop: 10, fontSize: 16}}>
+                    {email}
+                  </Text>
+              }
+              subtitle='Email'
+              subtitleStyle={{marginLeft: 24}}
+            />
 
-                 <CardSection>
-                 <TouchableOpacity onPress={() => Communications.text(phone)}>
-                   <View style={styles.holder}>
-                     <Text style={{height: 50, paddingLeft: 10}}>
-                       Phone: {phone}
-                     </Text>
-                   </View>
-                 </TouchableOpacity>
-                 </CardSection>
+            <ListItem
+              leftIcon={<Icon
+             raised
+             name='message'
+             color='#f50'
+              />
+              }
+              rightIcon={<Button
+                buttonStyle={{backgroundColor: '#3498db', borderRadius: 10, marginTop: '9%'}}
+                textStyle={{textAlign: 'center'}}
+                title={`ConneQt!`}
+                onPress={() => Communications.text(phone)}
+              />
+              }
+              title={
+                  <Text style={{height: 35, width: 210, marginLeft: 24, marginTop: 10, fontSize: 16}}>
+                    {phone}
+                  </Text>
+              }
+              subtitle='Message'
+              subtitleStyle={{marginLeft: 24}}
+            />
 
-                 <CardSection>
-                 <TouchableOpacity onPress={() => Communications.web(linkedin)}>
-                     <View style={styles.holder}>
-                     <Text style={{height: 50, paddingLeft: 10}}>
-                       Linkedin
-                     </Text>
-                     </View>
-                 </TouchableOpacity>
-                 </CardSection>
+            <ListItem
+              leftIcon={<Icon
+             raised
+             name='phone'
+             color='#f50'
+              />
+              }
+              rightIcon={<Button
+                buttonStyle={{backgroundColor: '#3498db', borderRadius: 10, marginTop: '9%'}}
+                textStyle={{textAlign: 'center'}}
+                title={`ConneQt!`}
+                onPress={() => Communications.phonecall(phone, true)}
+              />
+              }
+              title={
+                  <Text style={{height: 35, width: 210, marginLeft: 24, marginTop: 10, fontSize: 16}}>
+                    {phone}
+                  </Text>
+              }
+              subtitle='Call'
+              subtitleStyle={{marginLeft: 24}}
+            />
 
-                 <CardSection>
-                 <TouchableOpacity onPress={() => Communications.web(facebook)}>
-                     <View style={styles.holder}>
-                     <Text style={{height: 50, paddingLeft: 10}}>
-                       Facebook
-                     </Text>
-                     </View>
-                 </TouchableOpacity>
-                 </CardSection>
+            <ListItem
+              leftIcon={<Icon
+             raised
+             name='date-range'
+             color='#f50'
+              />
+              }
 
-                 <CardSection>
-                 <TouchableOpacity onPress={() => Communications.web(github)}>
-                     <View style={styles.holder}>
-                     <Text style={{height: 50, paddingLeft: 10}}>
-                       Github
-                     </Text>
-                     </View>
-                 </TouchableOpacity>
-                  </CardSection>
+              title={
+                  <Text style={{height: 35, width: 210, marginLeft: 24, marginTop: 10, fontSize: 16}}>
+                    {birthday}
+                  </Text>
+              }
+              subtitle='Birthday'
+              subtitleStyle={{marginLeft: 24}}
+            />
 
-                  <CardSection>
-                 <View style={styles.holder}>
-                 <Text style={{height: 50, paddingLeft: 10}}>
-                   Address: {address}
-                 </Text>
-                 </View>
-                 </CardSection>
+            <ListItem
+              leftIcon={<Icon
+             raised
+             name='near-me'
+             color='#f50'
+              />
+              }
+              title={
+                  <Text style={{height: 35, width: 210, marginLeft: 24, marginTop: 10, fontSize: 16}}>
+                    {address}
+                  </Text>
+              }
+              subtitle='Address'
+              subtitleStyle={{marginLeft: 24}}
+            />
 
-                 <CardSection>
-                 <View style={styles.holder}>
-                 <Text style={{height: 50, paddingLeft: 10}}>
-                   Birthday: {birthday}
-                 </Text>
-                 </View>
-                   </CardSection>
+            <ListItem
+              leftIcon={<SocialIcon
+              raised={true}
+               type='facebook'
+             />}
+              rightIcon={<Button
+                buttonStyle={{backgroundColor: '#3498db', borderRadius: 10, marginTop: '9%'}}
+                textStyle={{textAlign: 'center'}}
+                title={`ConneQt!`}
+                onPress={() => Communications.web(facebook)}
+              />
+              }
+              subtitle='Facebook'
+              subtitleStyle={{marginLeft: 24}}
+            />
 
+            <ListItem
+              leftIcon={<SocialIcon
+              raised={true}
+               type='github'
+             />}
+              rightIcon={<Button
+                buttonStyle={{backgroundColor: '#3498db', borderRadius: 10, marginTop: '9%'}}
+                textStyle={{textAlign: 'center'}}
+                title={`ConneQt!`}
+                onPress={() => Communications.web(github)}
+              />
+              }
+              subtitle='Github'
+              subtitleStyle={{marginLeft: 24}}
+            />
 
+            <ListItem
+              leftIcon={<SocialIcon
+              raised={true}
+               type='linkedin'
+             />}
+              rightIcon={<Button
+                buttonStyle={{backgroundColor: '#3498db', borderRadius: 10, marginTop: '9%'}}
+                textStyle={{textAlign: 'center'}}
+                title={`ConneQt!`}
+                onPress={() => Communications.web(linkedin)}
+              />
+              }
+              subtitle='Linkedin'
+              subtitleStyle={{marginLeft: 24}}
+            />
+
+            <ListItem
+              leftIcon={<SocialIcon
+              raised={true}
+               type='twitter'
+             />}
+              rightIcon={<Button
+                buttonStyle={{backgroundColor: '#3498db', borderRadius: 10, marginTop: '9%'}}
+                textStyle={{textAlign: 'center'}}
+                title={`ConneQt!`}
+                onPress={() => Communications.web(linkedin)}
+              />
+              }
+              subtitle='Twitter'
+              subtitleStyle={{marginLeft: 24}}
+            />
+
+            <ListItem
+              leftIcon={<SocialIcon
+              raised={true}
+               type='instagram'
+             />}
+              rightIcon={<Button
+                buttonStyle={{backgroundColor: '#3498db', borderRadius: 10, marginTop: '9%'}}
+                textStyle={{textAlign: 'center'}}
+                title={`ConneQt!`}
+                onPress={() => Communications.web(linkedin)}
+              />
+              }
+              subtitle='Instagram'
+              subtitleStyle={{marginLeft: 24}}
+            />
+
+                 </List>
                </View>
       </ScrollView>
     );
@@ -155,11 +270,11 @@ var styles = StyleSheet.create({
   },
   profileStyle:{
       position: 'absolute',
-        width: 180,
-        height: 180,
-        left: '29%',
-        top: '8%',
-        borderRadius: 90,
+        width: 200,
+        height: 200,
+        left: '26%',
+        top: '3%',
+        borderRadius: 100,
         borderWidth: 1,
         borderColor: '#000',
         justifyContent: 'center',

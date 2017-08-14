@@ -1,6 +1,6 @@
 import React from 'react';
 import { TabNavigator, StackNavigator } from 'react-navigation';
-import { Icon, Button } from 'react-native-elements';
+import { Icon, Button, Tabs, Tab } from 'react-native-elements';
 // import {Button} from 'react-native';
 import ContactList from '../screens/contact_list';
 import UserProfile from '../screens/user_profile';
@@ -16,7 +16,7 @@ export const ContactStack = StackNavigator({
     screen: ContactList,
     navigationOptions: {
     title: 'Contacts',
-    headerStyle:{ backgroundColor: '#3D6DCC', height: 69,
+    headerStyle:{ backgroundColor: '#3498db', height: 69,
    borderWidth: 2,
     borderBottomColor: '#fff',},
       headerTitleStyle:{ color: '#fff', fontSize: 18},
@@ -33,7 +33,7 @@ export const ContactStack = StackNavigator({
   }
 });
 
-export const Tabs = TabNavigator({
+export const TabNavi = TabNavigator({
     Connect: {
       screen: QRScanner,
       navigationOptions: {
@@ -70,13 +70,15 @@ export const Tabs = TabNavigator({
       }
     }
   }, {tabBarPosition: "bottom", tabBarOptions: {
-      tintColor: '#e0e0e0',
-      activeTintColor: '#68ff93',
+      tintColor: 'rgba(14, 122, 254, 1)',
+      activeTintColor: '#3498db',
+
       labelStyle: {
         fontSize: 11,
       },
       style: {
-        backgroundColor: '#3d3d3d',
+        height: 57,
+        backgroundColor: '#ededed',
         borderWidth: 1,
         borderRadius: 2,
         borderColor: '#ddd',

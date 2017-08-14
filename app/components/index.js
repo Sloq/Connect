@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { configureStore } from '../store/store';
 
-import { Tabs } from './config/router';
+import { TabNavi } from './config/router';
+import  TabTest  from './screens/tabtest';
 import SplashScreen from './splash';
 import Map from './map.js';
 import { List, ListItem, Header } from 'react-native-elements';
@@ -14,7 +15,7 @@ class App extends Component {
   render() {
     return(
       <Provider store={store}>
-      <Tabs/>
+      <TabNavi/>
       </Provider>
     );
   }

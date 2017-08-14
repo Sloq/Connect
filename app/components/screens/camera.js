@@ -49,13 +49,13 @@ export default class QRScanner extends React.Component {
           </View>
           <Header
       statusBarProps={{ barStyle: 'light-content' }}
-      centerComponent={{ text: 'Camera', style: { paddingLeft: 5,color: '#fff', fontSize: 18, opacity: 1, textAlign: 'center'} }}
+      centerComponent={{ text: 'Scan Code', style: { paddingLeft: 5,color: '#fff', fontSize: 18, opacity: 1, textAlign: 'center'} }}
       rightComponent= {<Button title="Sign Out"
       style={{color: 'white'}}
       buttonStyle={{backgroundColor: 'transparent', borderRadius: 10}}
       textStyle={{position: 'absolute', right: -15}}
        />}
-      outerContainerStyles={{ backgroundColor: '#3D6DCC' , opacity: 1,}}
+      outerContainerStyles={{ backgroundColor: '#3498db' , opacity: 1,}}
     />
               <View style={styles.preview}></View>
         </View>

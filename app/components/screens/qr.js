@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { fetchUser } from '../../util/apiUtil';
 import { connect } from 'react-redux';
-
+import { List, ListItem, Header, Button } from 'react-native-elements';
 
 class Qr extends Component {
   // getInitialState() {
@@ -20,8 +20,9 @@ class Qr extends Component {
   render() {
     return (
       <View style={styles.container}>
+
         <View style = {styles.backgroundContainer}>
-          <Image source = {require('../images/circular.jpg')} resizeMode = 'cover' style = {styles.backdrop} />
+          <Image source = {require('../images/play-stone.jpeg')} resizeMode = 'cover' style = {styles.backdrop} />
         </View>
         <View style = {styles.overlay}>
           <QRCode
@@ -31,6 +32,17 @@ class Qr extends Component {
             style={styles.logo}
           />
         </View>
+
+        <Header
+    statusBarProps={{ barStyle: 'light-content' }}
+    centerComponent={{ text: 'My Code', style: { paddingLeft: 5,color: '#fff', fontSize: 18, opacity: 1, textAlign: 'center'} }}
+    rightComponent= {<Button title="Sign Out"
+    style={{color: 'white'}}
+    buttonStyle={{backgroundColor: 'transparent', borderRadius: 10}}
+    textStyle={{position: 'absolute', right: -15}}
+     />}
+    outerContainerStyles={{ backgroundColor: '#3498db' , opacity: 1,}}
+  />
 
       </View>
     );
@@ -60,7 +72,7 @@ const styles = StyleSheet.create({
   },
   backdrop: {
     flex:1,
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   headline: {
     fontSize: 18,

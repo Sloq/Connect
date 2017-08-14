@@ -5,10 +5,9 @@ import {
   TextInput,
   Text,
   Switch,
-  Button,
   View
 } from 'react-native';
-import { List, ListItem, Tile, switchButton } from 'react-native-elements';
+import { List, ListItem, Tile, switchButton, Button } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { fetchUser } from '../../util/apiUtil';
 import { updateUser } from '../../actions/userActions';
@@ -35,15 +34,19 @@ class UserProfile extends Component {
           imageSrc={{uri: this.props.user.pic}}
           featured
           title= {this.props.user.name}
+          titleStyle={{fontSize: 48}}
           caption={this.props.user.email}
         />
-      <Button
-        justifyContent='center'
-        onPress={this.onPressSave}
-        title="Save Share Settings"
-        style={styles.button}
-        accessibilityLabel="Save Share Settings"
-      />
+
+        <Button
+          raised
+          onPress={this.onPressSave}
+          icon={{name: 'save', size: 32}}
+          buttonStyle={{backgroundColor: '#3498db', borderRadius: 10, marginTop: '4%'}}
+          textStyle={{textAlign: 'center'}}
+          accessibilityLabel="Save Share Settings"
+          title={`Save Share Settings`}
+    />
         <List>
 
           <ListItem
