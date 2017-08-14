@@ -20,17 +20,6 @@ var LogIn = React.createClass({
   },
 
   render() {
-    const toggle = () => {
-      if (this.props.user_id) {
-        return (
-          <Main />
-        );
-      } else {
-        return (
-          <Loginform />
-        );
-      }
-    };// end toggle
 
     return (
       <View

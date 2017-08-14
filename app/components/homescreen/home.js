@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
   },
   title: {
     bottom: '10%',
-    color: 'white',
     fontWeight: 'bold',
     fontSize: 35,
     textAlign: 'center',
@@ -67,7 +66,6 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     textAlign: 'center',
-    color: 'white',
     position: 'absolute',
     bottom: '20%'
   },

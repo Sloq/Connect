@@ -4,46 +4,46 @@ import {AppRegistry, Text, View, StyleSheet, KeyboardAvoidingView,
   TextInput, TouchableOpacity, StatusBar} from 'react-native';
 import { userLogIn, userSignUp, addAlert } from '../../actions';
 
-class LogInForm extends Component {
+class LogInForm extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = {
-      loading: false
-    };
+    // this.state = {
+    //   loading: false
+    // };
 
   this.onLogIn = this.onLogIn.bind(this);
   this.onSignUp = this.onSignUp.bind(this);
   }
 
-  componentDidMount(){
-    this.setState({loading: false});
-  }//end componentDidMount
+  // componentDidMount(){
+  //   this.setState({loading: false});
+  // }//end componentDidMount
 
   onLogIn() {
     const { dispatch, fields: {email, password} } = this.props;
-    this.setState({
-      loading: true
-    });
-    this.props.dispatch(userLogIn(email.value, password.value))
-      .then(()=> {
-        this.setState({
-          loading: false
-        });
-      });
+    // this.setState({
+    //   // loading: true
+    // });
+    this.props.dispatch(userLogIn(email.value, password.value));
+      // .then(()=> {
+      //   this.setState({
+      //     loading: false
+      //   });
+      // });
   } // end onLogIn
 
   onSignUp() {
     const { dispatch, fields: {email, password} } = this.props;
-    this.setState({
-      loading: true
-    });
-    this.props.dispatch(userSignUp(email.value, password.value))
-      .then(()=> {
-        this.setState({
-          loading: false
-        });
-      });
+    // this.setState({
+    //   loading: true
+    // });
+    this.props.dispatch(userSignUp(email.value, password.value));
+      // .then(()=> {
+      //   this.setState({
+      //     loading: false
+      //   });
+      // });
   } // end onSignUp
 
   render(){
@@ -104,15 +104,15 @@ class LogInForm extends Component {
       }
     });
 
-    if (this.state.loading) {
-      return (
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-          <Text>
-            Loading...
-          </Text>
-        </View>
-      );
-    } else {
+    // if (this.state.loading) {
+    //   return (
+    //     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    //       <Text>
+    //         Loading...
+    //       </Text>
+    //     </View>
+    //   );
+    // } else {
       return (
         <View style={styles.container} >
         <StatusBar barStyle='light-content' />
@@ -156,7 +156,7 @@ class LogInForm extends Component {
         </View>
       ); // end return
     } // end if
-  }// end render
+  // }// end render
 } // end LogInForm
 
 // const validate = (formProps) => {

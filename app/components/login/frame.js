@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 
 import Login from './login';
-import Loginform from './loginform';
 import Main from '../main';
 import AlertContainer from '../alerts/AlertContainer';
 import { TabNavi } from '../config/router';
@@ -21,7 +20,7 @@ var Frame = React.createClass({
   },
 
   render() {
-    
+
       if (this.props.user_id) {
         return (
           <TabNavi />

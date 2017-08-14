@@ -8,9 +8,6 @@ import { connect } from 'react-redux';
 export default class QRScanner extends React.Component {
   constructor(props){
     super(props)
-    this.state = {
-      hasCameraPermission: null,
-    }
     this.onLogout = this.onLogout.bind(this)
   }
 
