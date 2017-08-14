@@ -13,7 +13,7 @@ Our Mobile Application utilizes the MERN web stack. These frameworks stand for M
 ## Features & Implementation
 
 ### Home Page
-Splash Screen to be rendered on app boot
+Splash Screen to be rendered on application launch
 
 ### User Authentication
 Users can signup/log in. User Auth is implemented with Express backend. A User will have access to all the features of the app.
@@ -21,7 +21,7 @@ Users can signup/log in. User Auth is implemented with Express backend. A User w
 ![gif of login](https://user-images.githubusercontent.com/26663031/29267799-2797d35a-809f-11e7-91d3-3b520d56c568.gif)
 
 ### Camera
-Upon login, User will be automatically directed to the QR camera where one can immediately start networking with others by simply scanning another user's QR code.
+Upon login, user will be automatically directed to the QR camera where one can immediately start networking with others by simply scanning another user's QR code.
 
 ![gif of camera](https://user-images.githubusercontent.com/26663031/29267858-586986e0-809f-11e7-9465-1237fb71d086.gif)
 
@@ -48,7 +48,7 @@ All of the user's scanned contacts will propagate here. Upon selection of a cont
 ### Map
 Utilizing Airbnb's map API, all of your contacts will be mapped with a pin that details the location of sharing each other's contact information. Over time, users will be able visualize their hotspots for social and business networking.
 
-![gif of map](https://user-images.githubusercontent.com/26663031/29267868-61098c14-809f-11e7-98d3-e22a37b2c7d6.gif)
+![gif of map](https://user-images.githubusercontent.com/26663031/29267848-4e84d288-809f-11e7-89a8-d98c49f3cd70.gif)
 
 
 ## Future Improvements
