@@ -75,6 +75,12 @@ export default class Map extends Component {
   componentWillUnmount() {
     navigator.geolocation.clearWatch(this.watchID);
   }
+  // <MapView.Marker
+  //   animateToRegion={true}
+  //     coordinate={this.state.markerPosition}
+  //     title='Marker: Tianyu Duan'
+  // >
+  // </MapView.Marker>
   render() {
     return (
       <View style={styles.container}>
@@ -84,32 +90,48 @@ export default class Map extends Component {
           showsUserLocation={true}
           showsMyLocationButton={true}
         >
-        <MapView.Marker
-          animateToRegion={true}
-            coordinate={this.state.markerPosition}
-            title='Marker: Tianyu Duan'
-        >
-        </MapView.Marker>
+
 
         <MapView.Marker
           animateToRegion={true}
             coordinate={{
-              latitude: 37.238424,
-              longitude: -121.235801,
+              latitude: 38.544907,
+              longitude: -121.740517,
             }}
-            title='Marker: Stephen Loquet'
+            title='Marker: Clare Hsu'
         >
         </MapView.Marker>
 
         <MapView.Marker
           animateToRegion={true}
             coordinate={{
-              latitude: 37.791305,
-              longitude: -122.393735,
+              latitude: 37.819929,
+              longitude: -122.478255,
             }}
             title='Marker: Leo Liao'
         >
         </MapView.Marker>
+
+        <MapView.Marker
+          animateToRegion={true}
+            coordinate={{
+              latitude: 37.826977,
+              longitude: -122.422956,
+            }}
+            title='Marker: Anastassia Bobokalonova'
+        >
+        </MapView.Marker>
+
+        <MapView.Marker
+          animateToRegion={true}
+            coordinate={{
+              latitude: 37.760908,
+              longitude: -122.435004,
+            }}
+            title='Marker: Steven Loquet'
+        >
+        </MapView.Marker>
+
         </MapView>
       </View>
     );

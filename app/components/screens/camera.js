@@ -75,7 +75,7 @@ export default class QRScanner extends React.Component {
   }
 
   _handleBarCodeRead = (data) => {
-    alert(JSON.stringify(data));
+    alert(JSON.stringify(data.data));
   }
 }
 
