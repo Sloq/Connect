@@ -7,12 +7,12 @@ const mongoose = require('mongoose');
 var app = express();
 
 var router = require('./services/router');
-//
-// if (process.env.NODE_ENV=='production') {
-//   mongoose.connect(process.env.MONGO_URL);
-// } else {
+
+if (process.env.NODE_ENV=='production') {
+  mongoose.connect(process.env.MONGO_URL);
+} else {
   mongoose.connect('mongodb://localhost:connect/connect');
-// }
+}
 
 app.use(morgan('combined'));
 app.use(bodyParser.json());

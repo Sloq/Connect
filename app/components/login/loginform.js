@@ -7,6 +7,7 @@ import { userLogIn, userSignUp, addAlert } from '../../actions';
 class LogInForm extends Component {
   constructor(props){
     super(props);
+
     this.state = {
       loading: false
     };
