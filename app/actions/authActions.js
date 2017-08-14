@@ -11,11 +11,9 @@ export const userLogIn = (email, password) => (dispatch) => {
     axios.post(SIGNIN_URL, {email, password})
          .then((response) => {
            const {user_id, token} = response.data;
-           console.log(token);
-           console.log(user_id);
-           dispatch(userSignIn(user_id));
+                    dispatch(userSignIn(user_id));
          }).catch((error) => {
-           dispatch(addAlert("user does not exists"));
+           dispatch(addAlert("user does not exist"));
          })
   );
 };
