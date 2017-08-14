@@ -82,7 +82,7 @@ class ContactDetail extends Component {
               />
               }
               title={
-                  <Text style={{height: 35, width: 210, marginLeft: 24, marginTop: 10, fontSize: 16}}>
+                  <Text style={{height: 35, width: 210, marginLeft: 24, marginTop: 10, fontSize: 12}}>
                     {email}
                   </Text>
               }
@@ -273,7 +273,7 @@ var styles = StyleSheet.create({
         width: 200,
         height: 200,
         left: '26%',
-        top: '3%',
+        top: '1%',
         borderRadius: 100,
         borderWidth: 1,
         borderColor: '#000',

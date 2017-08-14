@@ -9,49 +9,28 @@ import {
   KeyboardAvoidingView
 } from 'react-native';
 
+import Login from './login';
 import Loginform from './loginform';
 import Main from '../main';
 import AlertContainer from '../alerts/AlertContainer';
 import { TabNavi } from '../config/router';
 
-var LogIn = React.createClass({
+var Frame = React.createClass({
   getInitialState() {
     return {};
   },
 
   render() {
-    const toggle = () => {
+    
       if (this.props.user_id) {
         return (
-          <Main />
+          <TabNavi />
         );
       } else {
         return (
-          <Loginform />
+          <Login />
         );
       }
-    };// end toggle
-
-    return (
-      <View
-      behavior='padding'
-      style={styles.container}>
-
-      <View style={styles.logoContainer}>
-      <Image
-      style={styles.logo}
-      source={require('../images/logo.png')}/>
-
-      <Text style={styles.title}> An app made to connect one another</Text>
-      </View>
-
-      <View style={styles.formContainer}>
-        <Loginform />
-        <AlertContainer/>
-      </View>
-
-    </View>
-    ); // end return
   }
 });
 
@@ -89,7 +68,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(LogIn);
+export default connect(mapStateToProps)(Frame);
 
 
 // class Login extends Component{

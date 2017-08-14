@@ -61,14 +61,20 @@ class LogInForm extends Component {
       container: {
         padding: 20,
       },
+      container2: {
+        top: '120%',
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: 'center'
+      },
       input: {
         width: 350,
         height: 40,
-        top: '95%',
+        top: '50%',
         backgroundColor: 'rgba(255, 255, 255, 0.2)',
         color: 'white',
         paddingHorizontal: 10,
-        marginTop: "2.5%"
+        marginTop: "4%"
       },
       textinputWrapper: {
       marginTop: "90%"
@@ -78,8 +84,19 @@ class LogInForm extends Component {
         backgroundColor: '#2980b9',
         paddingVertical: 15,
         alignItems: 'center',
-        top: '100%'
-
+        width: 150,
+        height: 40,
+        borderRadius: 5
+      },
+      buttonContainer2: {
+        justifyContent: 'center',
+        backgroundColor: '#2980b9',
+        paddingVertical: 15,
+        alignItems: 'center',
+        marginLeft: 10,
+        width: 150,
+        height: 40,
+        borderRadius: 5
       },
       buttonText: {
         textAlign: 'center',
@@ -108,6 +125,7 @@ class LogInForm extends Component {
         keyboardType='email-address'
         autoCapitalize='none'
         autoCorrect={false}
+        blurOnSubmit={true}
         style={styles.input} />
         <View>
         {renderError(email)}
@@ -118,37 +136,39 @@ class LogInForm extends Component {
         placeholder = "password"
         placeholderTextColor='rgba(255, 255, 255, 0.7)'
         secureTextEntry
-        returnKeyType='next'
+        blurOnSubmit={true}
+        returnKeyType='done'
         style={styles.input} />
 
         <View>
         {renderError(password)}
         </View>
 
-        <TouchableOpacity style={styles.buttonContainer} onPress={this.onLogIn}>
-        <Text style={styles.buttonText} >LOGIN</Text>
-        </TouchableOpacity>
+        <View style={styles.container2}>
+          <TouchableOpacity style={styles.buttonContainer} onPress={this.onLogIn}>
+          <Text style={styles.buttonText} >LOGIN</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.buttonContainer} onPress={this.onSignUp}>
-        <Text style={styles.buttonText} >SIGNUP</Text>
-        </TouchableOpacity>
-
+          <TouchableOpacity style={styles.buttonContainer2} onPress={this.onSignUp}>
+          <Text style={styles.buttonText} >SIGNUP</Text>
+          </TouchableOpacity>
+        </View>
         </View>
       ); // end return
     } // end if
   }// end render
 } // end LogInForm
 
-const validate = (formProps) => {
-  var errors = {};
-  if (!formProps.email) {
-    errors.email = "Please enter an email.";
-  }
-  if (!formProps.password) {
-    errors.password = "Please enter a password.";
-  }
-  return errors;
-};
+// const validate = (formProps) => {
+//   var errors = {};
+//   if (!formProps.email) {
+//     errors.email = "Please enter an email.";
+//   }
+//   if (!formProps.password) {
+//     errors.password = "Please enter a password.";
+//   }
+//   return errors;
+// };
 
 // AppRegistry.registerComponent('Loginform', () => reduxForm({
 //   form: 'login',
@@ -158,5 +178,4 @@ const validate = (formProps) => {
 module.exports = reduxForm({
   form: 'login',
   fields: ['email', 'password'],
-  validate: validate
 }, null, null)(LogInForm);

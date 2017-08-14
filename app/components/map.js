@@ -10,16 +10,16 @@ import { MapView } from 'expo';
 
 
 
-const {width, height} = Dimensions.get('window')
-const SCREEN_HEIGHT = height
-const SCREEN_WIDTH = width
-const ASPECT_RATIO = width / height
-const LATITUDE_DELTA = 0.0922
-const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO
+const {width, height} = Dimensions.get('window');
+const SCREEN_HEIGHT = height;
+const SCREEN_WIDTH = width;
+const ASPECT_RATIO = width / height;
+const LATITUDE_DELTA = 0.0922;
+const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
 export default class Map extends Component {
   constructor(props){
-    super(props)
+    super(props);
 
 
     this.state ={
@@ -36,7 +36,7 @@ export default class Map extends Component {
     };
   }
 
-  watchID: ?number = null
+  // watchID: ?number = null
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -88,6 +88,26 @@ export default class Map extends Component {
           animateToRegion={true}
             coordinate={this.state.markerPosition}
             title='Marker: Tianyu Duan'
+        >
+        </MapView.Marker>
+
+        <MapView.Marker
+          animateToRegion={true}
+            coordinate={{
+              latitude: 37.238424,
+              longitude: -121.235801,
+            }}
+            title='Marker: Stephen Loquet'
+        >
+        </MapView.Marker>
+
+        <MapView.Marker
+          animateToRegion={true}
+            coordinate={{
+              latitude: 37.791305,
+              longitude: -122.393735,
+            }}
+            title='Marker: Leo Liao'
         >
         </MapView.Marker>
         </MapView>

@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     return(
       <Provider store={store}>
-      <TabNavi/>
+      <SplashScreen/>
       </Provider>
     );
   }

@@ -2,12 +2,25 @@ import React from 'react';
 import { StyleSheet, Text, View, StatusBar, Image} from 'react-native';
 import { BarCodeScanner, Permissions } from 'expo';
 import { List, ListItem, Header, Button } from 'react-native-elements';
+import {userSignOut} from '../../actions';
+import { connect } from 'react-redux';
 
 export default class QRScanner extends React.Component {
-  state = {
-    hasCameraPermission: null,
+  constructor(props){
+    super(props)
+    this.state = {
+      hasCameraPermission: null,
+    }
+    this.onLogout = this.onLogout.bind(this)
   }
 
+  onLogout() {
+    this.props.dispatch(userSignOut);
+  }
+
+  state= {
+    hasCameraPermission: null
+  }
   async componentWillMount() {
     const { status } = await Permissions.askAsync(Permissions.CAMERA);
     this.setState({hasCameraPermission: status === 'granted'});
@@ -49,11 +62,12 @@ export default class QRScanner extends React.Component {
           </View>
           <Header
       statusBarProps={{ barStyle: 'light-content' }}
-      centerComponent={{ text: 'Scan Code', style: { paddingLeft: 5,color: '#fff', fontSize: 18, opacity: 1, textAlign: 'center'} }}
+      centerComponent={{ text: 'Scan Code', style: { paddingLeft: 5, color: '#fff', fontSize: 18, opacity: 1, textAlign: 'center'} }}
       rightComponent= {<Button title="Sign Out"
       style={{color: 'white'}}
       buttonStyle={{backgroundColor: 'transparent', borderRadius: 10}}
       textStyle={{position: 'absolute', right: -15}}
+      onPress={this.onLogout}
        />}
       outerContainerStyles={{ backgroundColor: '#3498db' , opacity: 1,}}
     />
@@ -102,3 +116,5 @@ const styles = StyleSheet.create({
   //     backgroundColor: 'rgba(0,0,0, .1)'
   //   },
 });
+
+  module.exports = connect()(QRScanner);

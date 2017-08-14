@@ -29,7 +29,7 @@ const defaultState = {
                 github: 'https://github.com/tianyuduan',
                 contacts: [],
                 location: {
-                  lattitude: 37.791305,
+                  latitude: 37.791305,
                   longitude: -122.393735,
                 }
               },
@@ -45,7 +45,7 @@ const defaultState = {
                 github: 'https://github.com/tianyuduan',
                 contacts: [],
                 location: {
-                  lattitude: 37.760908,
+                  latitude: 37.760908,
                   longitude: -122.435004,
                 }
               },
@@ -61,7 +61,7 @@ const defaultState = {
               github: 'https://github.com/tianyuduan',
               contacts: [],
               location: {
-                lattitude: 34.238424,
+                latitude: 34.238424,
                 longitude: -117.235801,
               }
             },
@@ -77,7 +77,7 @@ const defaultState = {
               github: 'https://github.com/tianyuduan',
               contacts: [],
               location: {
-                lattitude: 37.791305,
+                latitude: 37.791305,
                 longitude: -122.393735,
               }
             },
@@ -93,7 +93,7 @@ const defaultState = {
             github: 'https://github.com/tianyuduan',
             contacts: [],
             location: {
-              lattitude: 37.791305,
+              latitude: 37.791305,
               longitude: -122.393735,
             }
           },
@@ -109,7 +109,7 @@ const defaultState = {
           github: 'https://github.com/tianyuduan',
           contacts: [],
           location: {
-            lattitude: 37.791305,
+            latitude: 37.791305,
             longitude: -122.393735,
           }
         },    {
@@ -124,7 +124,7 @@ const defaultState = {
             github: 'https://github.com/tianyuduan',
             contacts: [],
             location: {
-              lattitude: 37.791305,
+              latitude: 37.791305,
               longitude: -122.393735,
             }
           },
@@ -140,7 +140,7 @@ const defaultState = {
           github: 'https://github.com/tianyuduan',
           contacts: [],
           location: {
-            lattitude: 37.791305,
+            latitude: 37.791305,
             longitude: -122.393735,
           }
         },
@@ -156,7 +156,7 @@ const defaultState = {
         github: 'https://github.com/tianyuduan',
         contacts: [],
         location: {
-          lattitude: 37.791305,
+          latitude: 37.791305,
           longitude: -122.393735,
         }
       },
@@ -172,7 +172,7 @@ const defaultState = {
       github: 'https://github.com/tianyuduan',
       contacts: [],
       location: {
-        lattitude: 37.791305,
+        latitude: 37.791305,
         longitude: -122.393735,
       }
       }

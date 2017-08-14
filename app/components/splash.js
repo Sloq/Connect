@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import LogIn from './login/login.js';
+import Frame from './login/frame.js';
 
 export default class SplashScreen extends Component {
   constructor(props) {
@@ -33,14 +34,14 @@ export default class SplashScreen extends Component {
     );
 
     let show = () => (
-      this.state.showComponentSplash ? splash() : <LogIn/>
+      this.state.showComponentSplash ? splash() : <Frame/>
     );
 
     let splash = () => (
       <View style={styles.wrapper}>
 
         <Text style={styles.title}>
-          Welcome to Connect!
+          Welcome to ConneQt!
         </Text>
 
         <View style={styles.loginWrapper}>
@@ -48,7 +49,7 @@ export default class SplashScreen extends Component {
             style={styles.buttonContainer}
             onPress={this.handleClick}>
               {
-                this.state.showComponentSplash ? null : <LogIn/>
+                this.state.showComponentSplash ? null : <Frame/>
               }
           <Text style={styles.buttonText}>LOGIN</Text>
           </TouchableOpacity>

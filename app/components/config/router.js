@@ -21,11 +21,6 @@ export const ContactStack = StackNavigator({
     borderBottomColor: '#fff',},
       headerTitleStyle:{ color: '#fff', fontSize: 18},
       tintColor: '#fefefe',
-      headerRight: <Button title="Sign Out"
-      style={{color: 'white'}}
-      buttonStyle={{backgroundColor: 'transparent', borderRadius: 10}}
-      textStyle={{position: 'absolute', right: 3, borderBottomColor: '#47315a',}}
-       />,
     }
   },
   ContactDetail: {

@@ -7,15 +7,19 @@ import {
   View
 } from 'react-native';
 import { fetchUser } from '../../util/apiUtil';
-import { connect } from 'react-redux';
 import { List, ListItem, Header, Button } from 'react-native-elements';
+import {userSignOut} from '../../actions';
+import { connect } from 'react-redux';
 
-class Qr extends Component {
-  // getInitialState() {
-  //   return ({user: "Stephen"});
-  // }
+class Qr extends React.Component {
+  constructor(props){
+    super(props);
+    this.onLogout = this.onLogout.bind(this);
+  }
 
-
+  onLogout() {
+    this.props.dispatch(userSignOut);
+  }
 
   render() {
     return (
@@ -40,6 +44,7 @@ class Qr extends Component {
     style={{color: 'white'}}
     buttonStyle={{backgroundColor: 'transparent', borderRadius: 10}}
     textStyle={{position: 'absolute', right: -15}}
+    onPress={this.onLogout}
      />}
     outerContainerStyles={{ backgroundColor: '#3498db' , opacity: 1,}}
   />
