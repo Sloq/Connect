@@ -103,6 +103,16 @@ class LogInForm extends React.Component {
         height: 40,
         borderRadius: 5
       },
+      buttonContainer3: {
+        justifyContent: 'center',
+        backgroundColor: '#2980b9',
+        paddingVertical: 15,
+        alignItems: 'center',
+        marginLeft: 10,
+        width: 150,
+        height: 40,
+        borderRadius: 5
+      },
       buttonText: {
         textAlign: 'center',
         color: "#FFF",
@@ -158,11 +168,14 @@ class LogInForm extends React.Component {
           <Text style={styles.buttonText} >SIGNUP</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.buttonContainer2} onPress={this.ghostLogin}>
+        </View>
+
+        <View>
+          <TouchableOpacity style={styles.buttonContainer3} onPress={this.ghostLogin}>
           <Text style={styles.buttonText} >DEMO</Text>
           </TouchableOpacity>
+        </View>  
 
-        </View>
         </View>
       ); // end return
     } // end if

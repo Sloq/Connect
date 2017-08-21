@@ -8,6 +8,8 @@ import Splash from './app/components/splash.js';
 import Index from './app/components/index';
 import {Tab} from './app/components/config/router.js';
 
+//this comment should hide the yellow warning messages
+console.disableYellowBox = true;
 
 export default class App extends React.Component {
   render() {
