@@ -5,12 +5,12 @@ import { StyleSheet, Text, View } from 'react-native';
 import Splash from './app/components/splash.js';
 // import QRCamera from './components/screens/camera.js';
 // import Home from './components/homescreen/home';
-import Tabs from './app/components/index';
+import Index from './app/components/index';
 
 export default class App extends React.Component {
   render() {
     return (
-      <Tabs/>
+      <Index />
     );
   }
 }

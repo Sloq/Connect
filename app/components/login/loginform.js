@@ -14,6 +14,7 @@ class LogInForm extends React.Component {
 
   this.onLogIn = this.onLogIn.bind(this);
   this.onSignUp = this.onSignUp.bind(this);
+  this.ghostLogin = this.ghostLogin.bind(this);
   }
 
   // componentDidMount(){
@@ -45,6 +46,10 @@ class LogInForm extends React.Component {
       //   });
       // });
   } // end onSignUp
+
+  ghostLogin() {
+    this.props.dispatch(userLogIn("guest@guest.com", "password"));
+  }
 
   render(){
     const {fields: {email, password}} = this.props;
@@ -152,6 +157,11 @@ class LogInForm extends React.Component {
           <TouchableOpacity style={styles.buttonContainer2} onPress={this.onSignUp}>
           <Text style={styles.buttonText} >SIGNUP</Text>
           </TouchableOpacity>
+
+          <TouchableOpacity style={styles.buttonContainer2} onPress={this.ghostLogin}>
+          <Text style={styles.buttonText} >DEMO</Text>
+          </TouchableOpacity>
+
         </View>
         </View>
       ); // end return
