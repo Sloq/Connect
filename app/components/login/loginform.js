@@ -104,11 +104,13 @@ class LogInForm extends React.Component {
         borderRadius: 5
       },
       buttonContainer3: {
+        position: 'absolute',
         justifyContent: 'center',
         backgroundColor: '#2980b9',
         paddingVertical: 15,
         alignItems: 'center',
-        marginLeft: 10,
+        marginLeft: 100,
+        marginTop: 350,
         width: 150,
         height: 40,
         borderRadius: 5
@@ -156,6 +158,12 @@ class LogInForm extends React.Component {
         style={styles.input} />
 
         <View>
+          <TouchableOpacity style={styles.buttonContainer3} onPress={this.ghostLogin}>
+          <Text style={styles.buttonText} >DEMO</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View>
         {renderError(password)}
         </View>
 
@@ -169,13 +177,6 @@ class LogInForm extends React.Component {
           </TouchableOpacity>
 
         </View>
-
-        <View>
-          <TouchableOpacity style={styles.buttonContainer3} onPress={this.ghostLogin}>
-          <Text style={styles.buttonText} >DEMO</Text>
-          </TouchableOpacity>
-        </View>  
-
         </View>
       ); // end return
     } // end if
