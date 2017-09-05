@@ -67,6 +67,7 @@ export const TabNavi = TabNavigator({
   }, {tabBarPosition: "bottom", tabBarOptions: {
       tintColor: 'rgba(14, 122, 254, 1)',
       activeTintColor: '#3498db',
+      showIcon: true,
 
       labelStyle: {
         fontSize: 11,
