@@ -50,6 +50,37 @@ Utilizing Airbnb's map API, all of your contacts will be mapped with pins that d
 ## Challenges
 To attempt this mobile app in one week was a daunting task. The biggest challenge was learning five new technologies in the span of a week and utilizing what we learned to craft a mobile app that fit our initial goals for functionality. Debugging, learning frameworks and managing an efficient git workflow consumed a lot of our time at the beginning. Towards the end of the week, we were able to improve our time efficiency, cooperation, quality of code, in addition to, swiftly wrapping our components together and offering a presentable prototype.
 
+## Code Samples
+```javascript
+const { hasCameraPermission } = this.state;
+if (hasCameraPermission === null) {
+  return <View />;
+} else if (hasCameraPermission === false) {
+  return <Text>No access to camera</Text>;
+} else {
+  return (
+    <View style={{flex: 1}}>
+      <StatusBar
+ barStyle='light-content'
+ />
+      <BarCodeScanner
+        onBarCodeRead={this._handleBarCodeRead}
+        style={StyleSheet.absoluteFill}
+      />
+    )
+  }
+  ```
+  One of defining features of this mobile app is its barcode scanner that detects QR codes of other uses. Upon scan
+
+  ```javascript
+    _handleBarCodeRead = (data) => {
+      alert(JSON.stringify(data.data));
+    }
+  }
+```
+
+a POST request will be sent the server, where after, the user contact list will be updated. 
+
 ## Future Improvements
 
 ### Implement functionality to application from backend
